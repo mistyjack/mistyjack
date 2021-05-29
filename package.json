@@ -1,0 +1,27 @@
+{
+  "name": "mistyjack",
+  "version": "1.0.0",
+  "description": "- 👋 Hi, I’m @mistyjack - 👀 I’m interested in fullstack web development with JavaScript/TypeScript - 🌱 I’m currently learning Microservices built with Node, React, Docker and Kubernetes - 💞️ I’m looking to collaborate on JavaScript projects - 📫 How to reach me, email me at moladepo@outlook.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mistyjack/mistyjack.git"
+  },
+  "keywords": [
+    "misty",
+    "mistyjack",
+    "mustafa",
+    "oladepo",
+    "\"mustafa",
+    "oladepo\""
+  ],
+  "author": "mistyjack",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mistyjack/mistyjack/issues"
+  },
+  "homepage": "https://github.com/mistyjack/mistyjack#readme"
+}
