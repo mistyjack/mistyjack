@@ -64,3 +64,19 @@ h4 {
 .material-icons {
   display: none;
 }
+
+.swiper-pagination-bullet {
+  width: 20px !important;
+  height: 20px !important;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  color: #ebebd3 !important;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.swiper-pagination-bullet-active {
+  color: #fff !important;
+  background: #083d77 !important;
+}

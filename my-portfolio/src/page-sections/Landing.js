@@ -5,7 +5,7 @@ const useStyles = makeStyles(theme =>
   createStyles({
     root: {
       position: "relative",
-      height: "100vh"
+      minHeight: "100vh"
     },
     textContent: {
       width: "100%",

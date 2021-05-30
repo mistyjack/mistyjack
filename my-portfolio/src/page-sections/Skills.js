@@ -7,19 +7,22 @@ const useStyles = makeStyles(theme =>
   createStyles({
     root: {
       flexGrow: 1,
-      height: "100vh",
-      position: "relative"
+      minHeight: "100vh"
     },
     outerContainer: {
-      position: "absolute",
-      top: "50%",
-      transform: "translateY(-50%)"
+      minHeight: "70vh",
+      [theme.breakpoints.up("sm")]: {
+        paddingTop: theme.spacing(25)
+      }
     },
     container: {
-      maxWidth: "70%",
-      margin: "0 auto 3rem"
+      maxWidth: "90%",
+      margin: "auto",
+      [theme.breakpoints.up("md")]: {
+        maxWidth: "55%"
+      }
     },
-    topSkills: {
+    skills: {
       padding: theme.spacing(1, 3),
       textAlign: "center"
     }
@@ -34,39 +37,35 @@ const topSkills = [
   { skill: "Next.js", experience: "6 months" }
 ];
 
-const otherSkills = ["Node.JS", "Material-UI", "Bootstrap", "TypeScript", "Git", "Redux", "Jest", "Testing-Library", "MongoDB", "REST APIs", "Docker", "Kubernetes", "Slack", "Trello", "Netlify", "Python", "Bash", "XML", "Webpack", "Heroku", "OAuth", "GIMP", "Inkscape"];
+const otherSkills = ["Node.JS", "Material-UI", "Bootstrap", "TypeScript", "Git", "BitGo SDK", "Redux", "Jest", "Testing-Library", "MongoDB", "REST APIs", "Docker", "Kubernetes", "Slack", "Trello", "Netlify", "Python", "Bash", "XML", "Webpack", "Heroku", "OAuth", "GIMP", "Inkscape"];
 
 const Skills = () => {
   const classes = useStyles();
 
   return (
     <div id="skills" className={classes.root + " page-section"}>
-      <div className={classes.outerContainer}>
-        <Grid spacing={2} className={classes.container} container justify="space-around">
+      <Grid container direction="row" className={classes.outerContainer}>
+        <Grid spacing={2} className={classes.container} item container justify="space-around">
           {topSkills.map(skillItem => (
             <Grid item key={skillItem.skill}>
-              <Paper className={classes.topSkills} elevation={1}>
-                <Typography variant="h3" gutterButtom>
-                  {skillItem.skill}
-                </Typography>
+              <Paper className={classes.skills} elevation={1}>
+                <Typography variant="h3">{skillItem.skill}</Typography>
                 <Typography variant="h4">{skillItem.experience}</Typography>
               </Paper>
             </Grid>
           ))}
         </Grid>
 
-        <Grid spacing={2} className={classes.container} container justify="space-around">
+        <Grid spacing={2} className={classes.container} item container justify="space-around">
           {otherSkills.map(skillItem => (
             <Grid item key={skillItem}>
-              <Paper className={classes.topSkills} elevation={1}>
-                <Typography variant="h4" gutterButtom>
-                  {skillItem}
-                </Typography>
+              <Paper className={classes.skills} elevation={1}>
+                <Typography variant="h4">{skillItem}</Typography>
               </Paper>
             </Grid>
           ))}
         </Grid>
-      </div>
+      </Grid>
     </div>
   );
 };
