@@ -2,8 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -13,4 +12,55 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.page-section {
+  background: rgb(2, 0, 36);
+  background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(8, 61, 119, 0.8561625333727241) 97%, rgba(7, 88, 143, 1) 100%, rgba(0, 212, 255, 1) 100%);
+}
+
+h2 {
+  font-size: 2rem !important;
+}
+
+@media (min-width: 600px) {
+  h2 {
+    font-size: 2.1rem !important;
+  }
+}
+
+@media (min-width: 960px) {
+  h2 {
+    font-size: 3rem !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  h2 {
+    font-size: 3.65rem !important;
+  }
+}
+
+h3 {
+  font-size: 1.2rem !important;
+}
+
+@media (min-width: 960px) {
+  h3 {
+    font-size: 1.6rem !important;
+  }
+}
+
+h4 {
+  font-size: 1rem !important;
+}
+
+@media (min-width: 960px) {
+  h4 {
+    font-size: 1.2rem !important;
+  }
+}
+
+.material-icons {
+  display: none;
 }
