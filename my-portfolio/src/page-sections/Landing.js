@@ -1,6 +1,6 @@
 import { createStyles, makeStyles } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
-import Slide from "@material-ui/core/Slide";
+import Zoom from "@material-ui/core/Zoom";
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -28,19 +28,24 @@ const Landing = () => {
   return (
     <div id="home" className={classes.root + " page-section"}>
       <div className={classes.textContent}>
-        <Slide direction="right" in={true} mountOnEnter unmountOnExit>
+        <Zoom in={true}>
           <Typography className="headline" color="secondary" variant="h2" gutterBottom>
             Hi there!
           </Typography>
-        </Slide>
+        </Zoom>
 
-        <Typography className="headline" color="secondary" variant="h2" gutterBottom>
-          My name is <span className={classes.redText}>Mustafa</span>
-        </Typography>
+        <Zoom in={true} style={{ transitionDelay: true ? "500ms" : "0ms" }}>
+          <Typography className="headline" color="secondary" variant="h2" gutterBottom>
+            I am <strong>Mustafa</strong>
+          </Typography>
+        </Zoom>
 
-        <Typography className="headline" color="secondary" variant="h2" gutterBottom>
-          A <span className={classes.redText}>Fullstack JavaScript</span> <br /> Web Developer
-        </Typography>
+        <Zoom in={true} style={{ transitionDelay: true ? "1000ms" : "0ms" }}>
+          <Typography className="headline" color="secondary" variant="h2" gutterBottom>
+            A <strong>Fullstack JavaScript</strong>
+            <br /> Web Developer
+          </Typography>
+        </Zoom>
       </div>
     </div>
   );

@@ -4,6 +4,8 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import CodeIcon from "@material-ui/icons/Code";
 import IconButton from "@material-ui/core/IconButton";
+import Fade from "react-reveal/Fade";
+import Zoom from "react-reveal/Zoom";
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -52,22 +54,26 @@ const Skills = () => {
 
   return (
     <div id="skills" className={classes.root + " page-section"}>
-      <Typography className={classes.heading + " headline"} color="secondary" variant="h2">
-        <IconButton edge="start" color="inherit" aria-label="code">
-          <span className="material-icons" aria-hidden="true">
-            Code Icon
-          </span>
-          <CodeIcon className={classes.icon} />
-        </IconButton>
-        My Skills
-      </Typography>
+      <Zoom>
+        <Typography className={classes.heading + " headline"} color="secondary" variant="h2">
+          <IconButton edge="start" color="inherit" aria-label="code">
+            <span className="material-icons" aria-hidden="true">
+              Code Icon
+            </span>
+            <CodeIcon className={classes.icon} />
+          </IconButton>
+          My Skills
+        </Typography>
+      </Zoom>
       <Grid spacing={2} className={classes.container + " " + classes.containerWithMargin} container justify="space-around">
         {topSkills.map(skillItem => (
           <Grid item key={skillItem.skill}>
-            <Paper className={classes.skills} elevation={1}>
-              <Typography variant="h3">{skillItem.skill}</Typography>
-              <Typography variant="h4">{skillItem.experience}</Typography>
-            </Paper>
+            <Fade right>
+              <Paper className={classes.skills} elevation={1}>
+                <Typography variant="h3">{skillItem.skill}</Typography>
+                <Typography variant="h4">{skillItem.experience}</Typography>
+              </Paper>
+            </Fade>
           </Grid>
         ))}
       </Grid>
@@ -75,9 +81,11 @@ const Skills = () => {
       <Grid spacing={2} className={classes.container} item container justify="space-around">
         {otherSkills.map(skillItem => (
           <Grid item key={skillItem}>
-            <Paper className={classes.skills} elevation={1}>
-              <Typography variant="h4">{skillItem}</Typography>
-            </Paper>
+            <Fade left>
+              <Paper className={classes.skills} elevation={1}>
+                <Typography variant="h4">{skillItem}</Typography>
+              </Paper>
+            </Fade>
           </Grid>
         ))}
       </Grid>

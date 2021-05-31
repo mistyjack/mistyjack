@@ -6,6 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import MyCard from "../components/MyCard";
 import IconButton from "@material-ui/core/IconButton";
 import BuildIcon from "@material-ui/icons/Build";
+import Zoom from "react-reveal/Zoom";
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -52,15 +53,17 @@ const Projects = () => {
 
   return (
     <div id="projects" className={classes.root + " page-section"}>
-      <Typography className={classes.heading + " headline"} color="secondary" variant="h2">
-        <IconButton edge="start" color="inherit" aria-label="Build">
-          <span className="material-icons" aria-hidden="true">
-            Build Icon
-          </span>
-          <BuildIcon className={classes.icon} />
-        </IconButton>
-        My Recent Works
-      </Typography>
+      <Zoom>
+        <Typography className={classes.heading + " headline"} color="secondary" variant="h2">
+          <IconButton edge="start" color="inherit" aria-label="Build">
+            <span className="material-icons" aria-hidden="true">
+              Build Icon
+            </span>
+            <BuildIcon className={classes.icon} />
+          </IconButton>
+          My Recent Works
+        </Typography>
+      </Zoom>
 
       <Swiper slidesPerView={1} pagination={pagination} autoplay navigation>
         {projects.map(project => (
