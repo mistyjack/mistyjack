@@ -134,7 +134,7 @@ const Contact = () => {
                     </span>
                     <PhoneIcon />
                   </IconButton>
-                  (905) 699-5401
+                  +234 905 699 5401
                 </Typography>
               </a>
             </Grid>
