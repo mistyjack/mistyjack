@@ -26,9 +26,9 @@ const theme = createMuiTheme({
       color: "#083D77"
     },
     h5: {
-      color: "#DA4167",
+      color: "#083D77",
       fontSize: "1rem",
-      fontWeight: "300"
+      fontWeight: "400"
     }
   }
 });

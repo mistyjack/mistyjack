@@ -40,10 +40,11 @@ const useStyles = makeStyles(theme =>
       backgroundColor: theme.palette.primary.main
     },
     iconBtn: {
-      color: theme.palette.primary.main
+      color: theme.palette.common.red
     },
     mainHead: {
-      marginTop: theme.spacing(2)
+      marginTop: theme.spacing(2),
+      color: theme.palette.primary.main
     },
     heading: {
       textAlign: "center",
