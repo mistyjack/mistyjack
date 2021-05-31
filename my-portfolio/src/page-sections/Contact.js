@@ -66,25 +66,25 @@ const Contact = () => {
             </Typography>
             <a href="mailto:moladepo@outlook.com">
               <IconButton className={classes.iconBtn}>
-                <div className="material-icons">Mail Icon</div>
+                <span className="material-icons">Mail Icon</span>
                 {IconPack.email}
               </IconButton>
             </a>
             <a href="https://wa.me/qr/56MY64WYPTSIL1">
               <IconButton className={classes.iconBtn}>
-                <div className="material-icons">Whatsapp Icon</div>
+                <span className="material-icons">Whatsapp Icon</span>
                 {IconPack.whatsapp}
               </IconButton>
             </a>
             <a href="https://github.com/mistyjack">
               <IconButton className={classes.iconBtn}>
-                <div className="material-icons">Github Icon</div>
+                <span className="material-icons">Github Icon</span>
                 {IconPack.github}
               </IconButton>
             </a>
             <a href="https://www.linkedin.com/in/mustafa-oladepo-51660772/">
               <IconButton className={classes.iconBtn}>
-                <div className="material-icons">LinkedIn Icon</div>
+                <span className="material-icons">LinkedIn Icon</span>
                 {IconPack.linkedIn}
               </IconButton>
             </a>
@@ -94,9 +94,9 @@ const Contact = () => {
         <Grid container direction="row" justify="space-around" alignItems="center">
           <Grid item>
             <a href="tel:+2349056005401">
-              <Typography variant="h6">
+              <Typography variant="h5">
                 <IconButton className={classes.iconBtn}>
-                  <div className="material-icons">Phone Icon</div>
+                  <span className="material-icons">Phone Icon</span>
                   <PhoneIcon />
                 </IconButton>
                 (905) 699-5401
@@ -105,9 +105,9 @@ const Contact = () => {
           </Grid>
           <Grid item>
             <a href="mailto:moladepo@outlook.com">
-              <Typography variant="h6">
+              <Typography variant="h5">
                 <IconButton className={classes.iconBtn}>
-                  <div className="material-icons">Mail Icon</div>
+                  <span className="material-icons">Mail Icon</span>
                   <MailIcon />
                 </IconButton>
                 moladepo@outlook.com

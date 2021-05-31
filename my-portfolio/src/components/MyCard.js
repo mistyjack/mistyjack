@@ -12,7 +12,8 @@ const useStyles = makeStyles(theme =>
   createStyles({
     root: {
       maxWidth: 600,
-      margin: "auto"
+      margin: "auto",
+      backgroundColor: theme.palette.secondary.main
     },
     media: {
       height: 0,
@@ -36,7 +37,7 @@ const MyCard = ({ item }) => {
     <Card className={classes.root}>
       <CardHeader
         avatar={
-          <Avatar aria-label="recipe" src={item.avatar ? item.avatar : ""} className={classes.avatar}>
+          <Avatar aria-label="recipe" alt={item.title} src={item.avatar ? item.avatar : ""} className={classes.avatar}>
             {item.title[0]}
           </Avatar>
         }
