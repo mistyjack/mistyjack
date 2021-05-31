@@ -14,9 +14,9 @@ const useStyles = makeStyles(theme =>
   createStyles({
     root: {
       flexGrow: 1,
-      height: "100vh",
+      minHeight: "100vh",
       position: "relative",
-      paddingTop: theme.spacing(15)
+      padding: theme.spacing(15, 0)
     },
     container: {
       margin: "auto",

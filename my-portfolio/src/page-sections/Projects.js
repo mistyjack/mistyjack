@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme =>
     root: {
       paddingTop: theme.spacing(15),
       flexGrow: 1,
-      height: "100vh"
+      minHeight: "100vh"
     },
     container: {
       minHeight: "100vh"
