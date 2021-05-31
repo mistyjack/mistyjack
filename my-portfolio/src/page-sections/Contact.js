@@ -87,52 +87,44 @@ const Contact = () => {
                 Osun, Nigeria
               </Typography>
             </Zoom>
-            <Zoom>
-              <a href="mailto:moladepo@outlook.com">
-                <IconButton className={classes.iconBtn} edge="start" color="inherit" aria-label="mail">
-                  <span className="material-icons" aria-hidden="true">
-                    Mail Icon
-                  </span>
-                  {IconPack.email}
-                </IconButton>
-              </a>
-            </Zoom>
-            <Zoom>
-              <a href="https://wa.me/qr/56MY64WYPTSIL1">
-                <IconButton className={classes.iconBtn} edge="start" color="inherit" aria-label="whatsapp">
-                  <span className="material-icons" aria-hidden="true">
-                    Whatsapp Icon
-                  </span>
-                  {IconPack.whatsapp}
-                </IconButton>
-              </a>
-            </Zoom>
-            <Zoom>
-              <a href="https://github.com/mistyjack">
-                <IconButton className={classes.iconBtn} edge="start" color="inherit" aria-label="github">
-                  <span className="material-icons" aria-hidden="true">
-                    Github Icon
-                  </span>
-                  {IconPack.github}
-                </IconButton>
-              </a>
-            </Zoom>
-            <Zoom>
-              <a href="https://www.linkedin.com/in/mustafa-oladepo-51660772/">
-                <IconButton className={classes.iconBtn} edge="start" color="inherit" aria-label="linkedin">
-                  <span className="material-icons" aria-hidden="true">
-                    LinkedIn Icon
-                  </span>
-                  {IconPack.linkedIn}
-                </IconButton>
-              </a>
-            </Zoom>
+            <a href="mailto:moladepo@outlook.com">
+              <IconButton className={classes.iconBtn} edge="start" color="inherit" aria-label="mail">
+                <span className="material-icons" aria-hidden="true">
+                  Mail Icon
+                </span>
+                {IconPack.email}
+              </IconButton>
+            </a>
+            <a href="https://wa.me/qr/56MY64WYPTSIL1">
+              <IconButton className={classes.iconBtn} edge="start" color="inherit" aria-label="whatsapp">
+                <span className="material-icons" aria-hidden="true">
+                  Whatsapp Icon
+                </span>
+                {IconPack.whatsapp}
+              </IconButton>
+            </a>
+            <a href="https://github.com/mistyjack">
+              <IconButton className={classes.iconBtn} edge="start" color="inherit" aria-label="github">
+                <span className="material-icons" aria-hidden="true">
+                  Github Icon
+                </span>
+                {IconPack.github}
+              </IconButton>
+            </a>
+            <a href="https://www.linkedin.com/in/mustafa-oladepo-51660772/">
+              <IconButton className={classes.iconBtn} edge="start" color="inherit" aria-label="linkedin">
+                <span className="material-icons" aria-hidden="true">
+                  LinkedIn Icon
+                </span>
+                {IconPack.linkedIn}
+              </IconButton>
+            </a>
           </Grid>
         </Grid>
         <Divider className={classes.divide} />
-        <Grid container direction="row" justify="space-around" alignItems="center">
-          <Grid item>
-            <Zoom>
+        <Zoom>
+          <Grid container direction="row" justify="space-around" alignItems="center">
+            <Grid item>
               <a href="tel:+2349056005401">
                 <Typography variant="h5">
                   <IconButton className={classes.iconBtn} edge="start" color="inherit" aria-label="phone">
@@ -144,10 +136,8 @@ const Contact = () => {
                   (905) 699-5401
                 </Typography>
               </a>
-            </Zoom>
-          </Grid>
-          <Grid item>
-            <Zoom>
+            </Grid>
+            <Grid item>
               <a href="mailto:moladepo@outlook.com">
                 <Typography variant="h5">
                   <IconButton className={classes.iconBtn} edge="start" color="inherit" aria-label="email">
@@ -159,9 +149,9 @@ const Contact = () => {
                   moladepo@outlook.com
                 </Typography>
               </a>
-            </Zoom>
+            </Grid>
           </Grid>
-        </Grid>
+        </Zoom>
       </Paper>
     </div>
   );

@@ -97,3 +97,8 @@ h4 {
     color: #ebebd3 !important;
   }
 }
+
+.MuiPaper-elevation2 {
+  background: rgb(2, 0, 36) !important;
+  background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(8, 61, 119, 0.8561625333727241) 97%, rgba(7, 88, 143, 1) 100%, rgba(0, 212, 255, 1) 100%) !important;
+}

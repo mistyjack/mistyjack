@@ -1,6 +1,7 @@
-import { Fragment, useEffect, useState } from "react";
+import { cloneElement, Fragment, useEffect, useState } from "react";
 import Link from "./Link";
 import { useRouter } from "next/router";
+import { useScrollYPosition } from "react-use-scroll-position";
 
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -44,11 +45,6 @@ const useStyles = makeStyles(theme =>
       top: 12,
       right: 40
     },
-    drawer: {
-      color: theme.palette.secondary.main,
-      background: "rgb(2,0,36)",
-      background: "radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(8,61,119,1) 57%, rgba(235,235,211,1) 100%)"
-    },
     backToTop: {
       position: "fixed",
       zIndex: 1000,
@@ -90,11 +86,43 @@ function ScrollTop(props) {
   );
 }
 
+function ElevationScroll(props) {
+  const { children } = props;
+
+  const trigger = useScrollTrigger({
+    disableHysteresis: false,
+    threshold: 0
+  });
+
+  return cloneElement(children, {
+    elevation: trigger ? 2 : 0,
+    position: trigger ? "fixed" : "absolute"
+  });
+}
+
 const Header = props => {
   const classes = useStyles();
   const [value, setValue] = useState(0);
   const matches = useMediaQuery("(min-width:600px)");
   const router = useRouter().asPath;
+  const scrollY = useScrollYPosition();
+
+  let screenHeight;
+  if (typeof window !== "undefined") {
+    screenHeight = 0.8 * window.screen.height;
+  }
+
+  useEffect(() => {
+    if (scrollY < screenHeight) {
+      setValue(0);
+    } else if (scrollY >= screenHeight && scrollY < 2 * screenHeight) {
+      setValue(1);
+    } else if (scrollY >= 2 * screenHeight && scrollY < 3 * screenHeight) {
+      setValue(2);
+    } else if (scrollY >= 3 * screenHeight && scrollY <= 4 * screenHeight) {
+      setValue(3);
+    }
+  }, [scrollY]);
 
   useEffect(() => {
     switch (router) {
@@ -131,9 +159,11 @@ const Header = props => {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar color="transparent" position="fixed" elevation={0}>
-        <Toolbar>{tab}</Toolbar>
-      </AppBar>
+      <ElevationScroll {...props}>
+        <AppBar color="transparent" position="fixed" elevation={0}>
+          <Toolbar>{tab}</Toolbar>
+        </AppBar>
+      </ElevationScroll>
 
       <ScrollTop {...props}>
         <Fab color="secondary" size="small" aria-label="scroll back to top">
