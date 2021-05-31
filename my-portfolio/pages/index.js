@@ -10,7 +10,9 @@ export default function Home() {
     <Fragment>
       <Head>
         <title>Mustafa Oladepo | Portfolio</title>
-        <meta name="description" content="Portfolio of Mustafa Oladepo (nickname mistyjack)" />
+        <meta name="description" key="description" content="Portfolio of Mustafa Oladepo" />
+        <meta property="og:title" content="Portfolio | Mustafa Oladepo" key="og:title" />
+        <meta property="og:image" key="og:image" content="/passport.png"></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
