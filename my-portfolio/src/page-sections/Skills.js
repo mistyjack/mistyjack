@@ -2,18 +2,15 @@ import { createStyles, makeStyles } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
+import CodeIcon from "@material-ui/icons/Code";
+import IconButton from "@material-ui/core/IconButton";
 
 const useStyles = makeStyles(theme =>
   createStyles({
     root: {
       flexGrow: 1,
-      minHeight: "100vh"
-    },
-    outerContainer: {
-      minHeight: "70vh",
-      [theme.breakpoints.up("sm")]: {
-        paddingTop: theme.spacing(25)
-      }
+      minHeight: "100vh",
+      paddingTop: theme.spacing(15)
     },
     container: {
       maxWidth: "90%",
@@ -22,10 +19,20 @@ const useStyles = makeStyles(theme =>
         maxWidth: "55%"
       }
     },
+    containerWithMargin: {
+      paddingBottom: theme.spacing(5)
+    },
     skills: {
       padding: theme.spacing(1, 3),
       textAlign: "center",
       backgroundColor: theme.palette.secondary.main
+    },
+    heading: {
+      textAlign: "center",
+      paddingBottom: theme.spacing(7)
+    },
+    icon: {
+      fontSize: 60
     }
   })
 );
@@ -45,27 +52,34 @@ const Skills = () => {
 
   return (
     <div id="skills" className={classes.root + " page-section"}>
-      <Grid container direction="row" className={classes.outerContainer}>
-        <Grid spacing={2} className={classes.container} item container justify="space-around">
-          {topSkills.map(skillItem => (
-            <Grid item key={skillItem.skill}>
-              <Paper className={classes.skills} elevation={1}>
-                <Typography variant="h3">{skillItem.skill}</Typography>
-                <Typography variant="h4">{skillItem.experience}</Typography>
-              </Paper>
-            </Grid>
-          ))}
-        </Grid>
+      <Typography className={classes.heading + " headline"} color="secondary" variant="h2">
+        <IconButton edge="start" color="inherit" aria-label="code">
+          <span className="material-icons" aria-hidden="true">
+            Code Icon
+          </span>
+          <CodeIcon className={classes.icon} />
+        </IconButton>
+        My Skills
+      </Typography>
+      <Grid spacing={2} className={classes.container + " " + classes.containerWithMargin} container justify="space-around">
+        {topSkills.map(skillItem => (
+          <Grid item key={skillItem.skill}>
+            <Paper className={classes.skills} elevation={1}>
+              <Typography variant="h3">{skillItem.skill}</Typography>
+              <Typography variant="h4">{skillItem.experience}</Typography>
+            </Paper>
+          </Grid>
+        ))}
+      </Grid>
 
-        <Grid spacing={2} className={classes.container} item container justify="space-around">
-          {otherSkills.map(skillItem => (
-            <Grid item key={skillItem}>
-              <Paper className={classes.skills} elevation={1}>
-                <Typography variant="h4">{skillItem}</Typography>
-              </Paper>
-            </Grid>
-          ))}
-        </Grid>
+      <Grid spacing={2} className={classes.container} item container justify="space-around">
+        {otherSkills.map(skillItem => (
+          <Grid item key={skillItem}>
+            <Paper className={classes.skills} elevation={1}>
+              <Typography variant="h4">{skillItem}</Typography>
+            </Paper>
+          </Grid>
+        ))}
       </Grid>
     </div>
   );

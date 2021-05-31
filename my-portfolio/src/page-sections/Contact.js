@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme =>
       flexGrow: 1,
       height: "100vh",
       position: "relative",
-      paddingTop: "10rem"
+      paddingTop: theme.spacing(15)
     },
     container: {
       margin: "auto",
@@ -43,6 +43,13 @@ const useStyles = makeStyles(theme =>
     },
     mainHead: {
       marginTop: theme.spacing(2)
+    },
+    heading: {
+      textAlign: "center",
+      paddingBottom: theme.spacing(7)
+    },
+    icon: {
+      fontSize: 55
     }
   })
 );
@@ -52,6 +59,15 @@ const Contact = () => {
 
   return (
     <div id="get-in-touch" className={classes.root + " page-section"}>
+      <Typography className={classes.heading + " headline"} color="secondary" variant="h2">
+        <IconButton edge="start" color="inherit" aria-label="Mail">
+          <span className="material-icons" aria-hidden="true">
+            Mail Icon
+          </span>
+          <MailIcon className={classes.icon} />
+        </IconButton>
+        Get in Touch
+      </Typography>
       <Paper className={classes.container} elevation={1}>
         <Grid container direction="row" justify="space-around" alignItems="center">
           <Grid item>
@@ -65,26 +81,34 @@ const Contact = () => {
               Osun, Nigeria
             </Typography>
             <a href="mailto:moladepo@outlook.com">
-              <IconButton className={classes.iconBtn}>
-                <span className="material-icons">Mail Icon</span>
+              <IconButton className={classes.iconBtn} edge="start" color="inherit" aria-label="mail">
+                <span className="material-icons" aria-hidden="true">
+                  Mail Icon
+                </span>
                 {IconPack.email}
               </IconButton>
             </a>
             <a href="https://wa.me/qr/56MY64WYPTSIL1">
-              <IconButton className={classes.iconBtn}>
-                <span className="material-icons">Whatsapp Icon</span>
+              <IconButton className={classes.iconBtn} edge="start" color="inherit" aria-label="whatsapp">
+                <span className="material-icons" aria-hidden="true">
+                  Whatsapp Icon
+                </span>
                 {IconPack.whatsapp}
               </IconButton>
             </a>
             <a href="https://github.com/mistyjack">
-              <IconButton className={classes.iconBtn}>
-                <span className="material-icons">Github Icon</span>
+              <IconButton className={classes.iconBtn} edge="start" color="inherit" aria-label="github">
+                <span className="material-icons" aria-hidden="true">
+                  Github Icon
+                </span>
                 {IconPack.github}
               </IconButton>
             </a>
             <a href="https://www.linkedin.com/in/mustafa-oladepo-51660772/">
-              <IconButton className={classes.iconBtn}>
-                <span className="material-icons">LinkedIn Icon</span>
+              <IconButton className={classes.iconBtn} edge="start" color="inherit" aria-label="linkedin">
+                <span className="material-icons" aria-hidden="true">
+                  LinkedIn Icon
+                </span>
                 {IconPack.linkedIn}
               </IconButton>
             </a>
@@ -95,8 +119,10 @@ const Contact = () => {
           <Grid item>
             <a href="tel:+2349056005401">
               <Typography variant="h5">
-                <IconButton className={classes.iconBtn}>
-                  <span className="material-icons">Phone Icon</span>
+                <IconButton className={classes.iconBtn} edge="start" color="inherit" aria-label="phone">
+                  <span className="material-icons" aria-hidden="true">
+                    Phone Icon
+                  </span>
                   <PhoneIcon />
                 </IconButton>
                 (905) 699-5401
@@ -106,8 +132,10 @@ const Contact = () => {
           <Grid item>
             <a href="mailto:moladepo@outlook.com">
               <Typography variant="h5">
-                <IconButton className={classes.iconBtn}>
-                  <span className="material-icons">Mail Icon</span>
+                <IconButton className={classes.iconBtn} edge="start" color="inherit" aria-label="email">
+                  <span className="material-icons" aria-hidden="true">
+                    Mail Icon
+                  </span>
                   <MailIcon />
                 </IconButton>
                 moladepo@outlook.com

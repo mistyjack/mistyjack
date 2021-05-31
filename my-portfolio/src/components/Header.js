@@ -59,8 +59,7 @@ const useStyles = makeStyles(theme =>
 
 function a11yProps(index) {
   return {
-    id: `scrollable-auto-tab-${index}`,
-    "aria-controls": `scrollable-auto-tabpanel-${index}`
+    id: `scrollable-auto-tab-${index}`
   };
 }
 
@@ -105,10 +104,10 @@ const Header = props => {
   const tab = (
     <Fragment>
       <Tabs className={classes.tabs} variant={matches ? "fullWidth" : "scrollable"} scrollButtons="auto" value={value} onChange={handleChange} aria-label="scrollable auto tabs example">
-        <Tab fullWidth className={classes.tab} label="Home" component={Link} href="#home" {...a11yProps(0)} />
-        <Tab className={classes.tab} label="Skills" component={Link} href="#skills" {...a11yProps(1)} />
-        <Tab className={classes.tab} label="Projects" component={Link} href="#projects" {...a11yProps(2)} />
-        <Tab className={classes.tab} label="Get in touch" component={Link} href="#get-in-touch" {...a11yProps(3)} />
+        <Tab className={classes.tab} label="Home" component={Link} href="/#home" {...a11yProps(0)} />
+        <Tab className={classes.tab} label="Skills" component={Link} href="/#skills" {...a11yProps(1)} />
+        <Tab className={classes.tab} label="Projects" component={Link} href="/#projects" {...a11yProps(2)} />
+        <Tab className={classes.tab} label="Get in touch" component={Link} href="/#get-in-touch" {...a11yProps(3)} />
       </Tabs>
     </Fragment>
   );

@@ -16,7 +16,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main style={{ scrollBehavior: "smooth" }}>
         <Landing />
         <Skills />
         <Projects />

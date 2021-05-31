@@ -2,7 +2,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper/core";
 
 import { createStyles, makeStyles } from "@material-ui/core";
+import Typography from "@material-ui/core/Typography";
 import MyCard from "../components/MyCard";
+import IconButton from "@material-ui/core/IconButton";
+import BuildIcon from "@material-ui/icons/Build";
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -13,6 +16,13 @@ const useStyles = makeStyles(theme =>
     },
     container: {
       minHeight: "100vh"
+    },
+    heading: {
+      textAlign: "center",
+      paddingBottom: theme.spacing(7)
+    },
+    icon: {
+      fontSize: 60
     }
   })
 );
@@ -42,6 +52,16 @@ const Projects = () => {
 
   return (
     <div id="projects" className={classes.root + " page-section"}>
+      <Typography className={classes.heading + " headline"} color="secondary" variant="h2">
+        <IconButton edge="start" color="inherit" aria-label="Build">
+          <span className="material-icons" aria-hidden="true">
+            Build Icon
+          </span>
+          <BuildIcon className={classes.icon} />
+        </IconButton>
+        My Recent Works
+      </Typography>
+
       <Swiper slidesPerView={1} pagination={pagination} autoplay navigation>
         {projects.map(project => (
           <SwiperSlide key={project.title}>
