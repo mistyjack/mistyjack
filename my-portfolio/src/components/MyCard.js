@@ -20,12 +20,12 @@ const useStyles = makeStyles(theme =>
       paddingTop: "56.25%" // 16:9
     },
     avatar: {
-      backgroundColor: theme.palette.common.red
+      backgroundColor: theme.palette.primary.main
     },
     btn: {
       position: "relative",
       textTransform: "none",
-      color: theme.palette.common.red
+      color: theme.palette.primary.main
     }
   })
 );
