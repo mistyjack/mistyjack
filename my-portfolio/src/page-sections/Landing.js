@@ -1,5 +1,6 @@
 import { createStyles, makeStyles } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
+import Slide from "@material-ui/core/Slide";
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -27,12 +28,16 @@ const Landing = () => {
   return (
     <div id="home" className={classes.root + " page-section"}>
       <div className={classes.textContent}>
-        <Typography className="headline" color="secondary" variant="h2" gutterBottom>
-          Hi there!
-        </Typography>
+        <Slide direction="right" in={true} mountOnEnter unmountOnExit>
+          <Typography className="headline" color="secondary" variant="h2" gutterBottom>
+            Hi there!
+          </Typography>
+        </Slide>
+
         <Typography className="headline" color="secondary" variant="h2" gutterBottom>
           My name is <span className={classes.redText}>Mustafa</span>
         </Typography>
+
         <Typography className="headline" color="secondary" variant="h2" gutterBottom>
           A <span className={classes.redText}>Fullstack JavaScript</span> <br /> Web Developer
         </Typography>

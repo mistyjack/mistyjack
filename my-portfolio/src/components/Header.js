@@ -1,5 +1,7 @@
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import Link from "./Link";
+import { useRouter } from "next/router";
+import throttle from "lodash/throttle";
 
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -66,11 +68,8 @@ function a11yProps(index) {
 function ScrollTop(props) {
   const { children, window } = props;
   const classes = useStyles();
-  // Note that you normally won't need to set the window ref as useScrollTrigger
-  // will default to window.
-  // This is only being set here because the demo is in an iframe.
+
   const trigger = useScrollTrigger({
-    target: window ? window() : undefined,
     disableHysteresis: true,
     threshold: 100
   });
@@ -96,6 +95,55 @@ const Header = props => {
   const classes = useStyles();
   const [value, setValue] = useState(0);
   const matches = useMediaQuery("(min-width:600px)");
+  const router = useRouter().asPath;
+  // const [previousScrollY, setPreviousScrollY] = useState(null);
+  // const [scrollDirection, setScrollDirection] = useState("");
+
+  // if (typeof window !== "undefined") {
+  //   setPreviousScrollY(window.scrollY);
+  // }
+
+  // const determineScrollDirection = () => {
+  //   if (typeof window !== "undefined") {
+  //     if (window.scrollY > previousScrollY) {
+  //       setScrollDirection("down");
+  //     } else {
+  //       setScrollDirection("up");
+  //     }
+  //     setPreviousScrollY(window.scrollY);
+  //   }
+  // };
+
+  // const runOnScroll = () => {
+  //   determineScrollDirection();
+  //   console.log(previousScrollY);
+  // };
+
+  // if (typeof window !== "undefined") {
+  //   useEffect(() => {
+  //     window.addEventListener(
+  //       "scroll",
+  //       throttle(() => console.log("Scrool"), 200)
+  //     );
+  //   }, [window.scrollY]);
+  // }
+
+  useEffect(() => {
+    switch (router) {
+      case "/#home":
+        setValue(0);
+        break;
+      case "/#skills":
+        setValue(1);
+        break;
+      case "/#projects":
+        setValue(2);
+        break;
+      case "/#get-in-touch":
+        setValue(3);
+        break;
+    }
+  }, [router]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
