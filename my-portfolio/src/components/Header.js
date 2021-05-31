@@ -96,30 +96,15 @@ function ScrollTop(props) {
 const Header = props => {
   const classes = useStyles();
   const [value, setValue] = useState(0);
-  const [menuState, setMenuState] = useState({ top: false });
   const matches = useMediaQuery("(min-width:600px)");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  const toggleDrawer = (anchor, open) => event => {
-    if (event && event.type === "keydown" && (event.key === "Tab" || event.key === "Shift")) {
-      return;
-    }
-
-    setMenuState({ ...menuState, [anchor]: open });
-  };
-
-  // TabIndicatorProps={{
-  //   style: {
-  //     display: "none"
-  //   }
-  // }}
-
   const tab = (
     <Fragment>
-      <Tabs className={classes.tabs} variant={matches ? "fullWidth" : "scrollable"} scrollButtons="auto" value={value} onChange={handleChange} aria-label="scrollable auto tabs">
+      <Tabs className={classes.tabs} variant={matches ? "fullWidth" : "scrollable"} scrollButtons="auto" value={value} onChange={handleChange} aria-label="scrollable auto tabs example">
         <Tab fullWidth className={classes.tab} label="Home" component={Link} href="#home" {...a11yProps(0)} />
         <Tab className={classes.tab} label="Skills" component={Link} href="#skills" {...a11yProps(1)} />
         <Tab className={classes.tab} label="Projects" component={Link} href="#projects" {...a11yProps(2)} />

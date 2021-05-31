@@ -55,7 +55,7 @@ const Contact = () => {
       <Paper className={classes.container} elevation={1}>
         <Grid container direction="row" justify="space-around" alignItems="center">
           <Grid item>
-            <Avatar className={classes.passport} alt="Mustafa" src="/passport.png" />
+            <Avatar className={classes.passport} width={1320} height={1368} alt="Mustafa" src="https://ik.imagekit.io/7wpxe2myx/Mistyjack/passport_XsU6P_Zke.png" />
           </Grid>
           <Grid item>
             <Typography className={classes.mainHead} variant="h3" gutterBottom>
@@ -65,16 +65,28 @@ const Contact = () => {
               Osun, Nigeria
             </Typography>
             <a href="mailto:moladepo@outlook.com">
-              <IconButton className={classes.iconBtn}>{IconPack.email}</IconButton>
+              <IconButton className={classes.iconBtn}>
+                <div className="material-icons">Mail Icon</div>
+                {IconPack.email}
+              </IconButton>
             </a>
             <a href="https://wa.me/qr/56MY64WYPTSIL1">
-              <IconButton className={classes.iconBtn}>{IconPack.whatsapp}</IconButton>
+              <IconButton className={classes.iconBtn}>
+                <div className="material-icons">Whatsapp Icon</div>
+                {IconPack.whatsapp}
+              </IconButton>
             </a>
             <a href="https://github.com/mistyjack">
-              <IconButton className={classes.iconBtn}>{IconPack.github}</IconButton>
+              <IconButton className={classes.iconBtn}>
+                <div className="material-icons">Github Icon</div>
+                {IconPack.github}
+              </IconButton>
             </a>
             <a href="https://www.linkedin.com/in/mustafa-oladepo-51660772/">
-              <IconButton className={classes.iconBtn}>{IconPack.linkedIn}</IconButton>
+              <IconButton className={classes.iconBtn}>
+                <div className="material-icons">LinkedIn Icon</div>
+                {IconPack.linkedIn}
+              </IconButton>
             </a>
           </Grid>
         </Grid>
@@ -84,6 +96,7 @@ const Contact = () => {
             <a href="tel:+2349056005401">
               <Typography variant="h6">
                 <IconButton className={classes.iconBtn}>
+                  <div className="material-icons">Phone Icon</div>
                   <PhoneIcon />
                 </IconButton>
                 (905) 699-5401
@@ -94,6 +107,7 @@ const Contact = () => {
             <a href="mailto:moladepo@outlook.com">
               <Typography variant="h6">
                 <IconButton className={classes.iconBtn}>
+                  <div className="material-icons">Mail Icon</div>
                   <MailIcon />
                 </IconButton>
                 moladepo@outlook.com
