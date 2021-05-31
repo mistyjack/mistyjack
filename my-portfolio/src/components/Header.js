@@ -1,5 +1,4 @@
-import { cloneElement, forwardRef, Fragment, useState } from "react";
-import Image from "next/image";
+import { Fragment, useState } from "react";
 import Link from "./Link";
 
 import { createStyles, makeStyles } from "@material-ui/core/styles";
@@ -9,17 +8,9 @@ import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Hidden from "@material-ui/core/Hidden";
-import IconButton from "@material-ui/core/IconButton";
-import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import Fab from "@material-ui/core/Fab";
 import Zoom from "@material-ui/core/Zoom";
-import MenuIcon from "@material-ui/icons/Menu";
-import CloseIcon from "@material-ui/icons/Close";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const useStyles = makeStyles(theme =>
@@ -132,7 +123,7 @@ const Header = props => {
         <Tab fullWidth className={classes.tab} label="Home" component={Link} href="#home" {...a11yProps(0)} />
         <Tab className={classes.tab} label="Skills" component={Link} href="#skills" {...a11yProps(1)} />
         <Tab className={classes.tab} label="Projects" component={Link} href="#projects" {...a11yProps(2)} />
-        <Tab className={classes.tab} label="Get in touch" component={Link} href="#contact" {...a11yProps(3)} />
+        <Tab className={classes.tab} label="Get in touch" component={Link} href="#get-in-touch" {...a11yProps(3)} />
       </Tabs>
     </Fragment>
   );

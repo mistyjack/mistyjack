@@ -24,6 +24,11 @@ const theme = createMuiTheme({
     },
     h4: {
       color: "#083D77"
+    },
+    h6: {
+      color: "#DA4167",
+      fontSize: "1rem",
+      fontWeight: "300"
     }
   }
 });

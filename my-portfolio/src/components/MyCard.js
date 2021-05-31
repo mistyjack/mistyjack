@@ -22,7 +22,9 @@ const useStyles = makeStyles(theme =>
       backgroundColor: theme.palette.common.red
     },
     btn: {
-      textTransform: "none"
+      position: "relative",
+      textTransform: "none",
+      color: theme.palette.common.red
     }
   })
 );
@@ -34,7 +36,7 @@ const MyCard = ({ item }) => {
     <Card className={classes.root}>
       <CardHeader
         avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
+          <Avatar aria-label="recipe" src={item.avatar ? item.avatar : ""} className={classes.avatar}>
             {item.title[0]}
           </Avatar>
         }
@@ -47,7 +49,7 @@ const MyCard = ({ item }) => {
           {item.description}
         </Typography>
       </CardContent>
-      <CardActions disableSpacing>
+      <CardActions style={{ zIndex: 100000, position: "relative" }} disableSpacing>
         <a href={item.link} target="_blank" rel="noopener noreferrer">
           <Button classes={{ root: classes.btn }} size="small" color="primary">
             Visit page

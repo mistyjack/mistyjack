@@ -68,15 +68,32 @@ h4 {
 .swiper-pagination-bullet {
   width: 20px !important;
   height: 20px !important;
-  text-align: center;
-  line-height: 20px;
-  font-size: 12px;
+  text-align: center !important;
+  line-height: 20px !important;
+  font-size: 12px !important;
   color: #ebebd3 !important;
-  opacity: 1;
-  background: rgba(0, 0, 0, 0.2);
 }
 
 .swiper-pagination-bullet-active {
   color: #fff !important;
   background: #083d77 !important;
+}
+
+.swiper-pagination {
+  width: auto !important;
+  bottom: 0.8rem !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #da4167 !important;
+}
+
+@media (min-width: 600px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #ebebd3 !important;
+  }
 }
