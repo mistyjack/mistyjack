@@ -55,7 +55,7 @@ const Contact = () => {
       <Paper className={classes.container} elevation={1}>
         <Grid container direction="row" justify="space-around" alignItems="center">
           <Grid item>
-            <Avatar className={classes.passport} width={1320} height={1368} alt="Mustafa" src="https://ik.imagekit.io/7wpxe2myx/Mistyjack/passport_XsU6P_Zke.png" />
+            <Avatar className={classes.passport} width={1320} height={1368} alt="Mustafa" src="https://ik.imagekit.io/7wpxe2myx/Mistyjack/passport_zOtmXzmmMW.png" />
           </Grid>
           <Grid item>
             <Typography className={classes.mainHead} variant="h3" gutterBottom>
