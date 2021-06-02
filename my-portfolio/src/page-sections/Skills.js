@@ -26,8 +26,7 @@ const useStyles = makeStyles(theme =>
     },
     skills: {
       padding: theme.spacing(1, 3),
-      textAlign: "center",
-      backgroundColor: theme.palette.secondary.main
+      textAlign: "center"
     },
     heading: {
       textAlign: "center",

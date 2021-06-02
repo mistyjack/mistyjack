@@ -5,8 +5,7 @@ const theme = createMuiTheme({
   palette: {
     common: {
       black: "#000",
-      white: "#fff",
-      red: "#DA4167"
+      white: "#fff"
     },
     primary: {
       main: "#083D77"
@@ -20,7 +19,8 @@ const theme = createMuiTheme({
   },
   typography: {
     h3: {
-      color: "#DA4167"
+      color: "#083D77",
+      fontWeight: 700
     },
     h4: {
       color: "#083D77"

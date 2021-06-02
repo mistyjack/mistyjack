@@ -15,9 +15,6 @@ const useStyles = makeStyles(theme =>
       position: "absolute",
       top: "50%",
       transform: "translateY(-50%)"
-    },
-    redText: {
-      color: theme.palette.common.red
     }
   })
 );

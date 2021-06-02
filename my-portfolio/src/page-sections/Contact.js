@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme =>
       padding: theme.spacing(3),
       width: "100%",
       textAlign: "center",
-      backgroundColor: theme.palette.secondary.main,
+      backgroundColor: theme.palette.common.white,
       [theme.breakpoints.up("sm")]: {
         width: "50%"
       },
@@ -40,7 +40,7 @@ const useStyles = makeStyles(theme =>
       backgroundColor: theme.palette.primary.main
     },
     iconBtn: {
-      color: theme.palette.common.red
+      color: theme.palette.primary.main
     },
     mainHead: {
       marginTop: theme.spacing(2),
