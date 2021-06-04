@@ -126,7 +126,7 @@ const Contact = () => {
         <Zoom>
           <Grid container direction="row" justify="space-around" alignItems="center">
             <Grid item>
-              <a href="tel:+2349056005401">
+              <a href="tel:+2349056995401">
                 <Typography variant="h5">
                   <IconButton className={classes.iconBtn} edge="start" color="inherit" aria-label="phone">
                     <span className="material-icons" aria-hidden="true">
