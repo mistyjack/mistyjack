@@ -12,7 +12,7 @@ export default function Home() {
         <title>Mustafa Oladepo | Portfolio</title>
         <meta name="description" key="description" content="Portfolio of Mustafa Oladepo" />
         <meta property="og:title" content="Portfolio | Mustafa Oladepo" key="og:title" />
-        <meta property="og:image" key="og:image" content="https://ik.imagekit.io/7wpxe2myx/Mistyjack/passport_XsU6P_Zke.png"></meta>
+        <meta property="og:image" key="og:image" content="https://ik.imagekit.io/7wpxe2myx/Mistyjack/Logo_Asset_3_vIR3LJ6UN.png"></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
