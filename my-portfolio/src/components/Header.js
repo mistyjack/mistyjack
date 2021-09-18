@@ -90,7 +90,7 @@ function ElevationScroll(props) {
   const { children } = props;
 
   const trigger = useScrollTrigger({
-    disableHysteresis: false,
+    disableHysteresis: true,
     threshold: 0
   });
 

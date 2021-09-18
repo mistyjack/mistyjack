@@ -43,10 +43,10 @@ const topSkills = [
   { skill: "HTML", experience: "5 years" },
   { skill: "CSS", experience: "5 years" },
   { skill: "React.js", experience: "3 years" },
-  { skill: "Next.js", experience: "6 months" }
+  { skill: "Next.js", experience: "1 year" }
 ];
 
-const otherSkills = ["Node.JS", "Material-UI", "Bootstrap", "TypeScript", "Git", "BitGo SDK", "Redux", "Jest", "Testing-Library", "MongoDB", "REST APIs", "Docker", "Kubernetes", "Slack", "Trello", "Netlify", "Python", "Bash", "XML", "Webpack", "Heroku", "OAuth", "GIMP", "Inkscape"];
+const otherSkills = ["Nest.JS", "Node.JS", "Material-UI", "Bootstrap", "TypeScript", "Git", "BitGo SDK", "Redux", "Jest", "Testing-Library", "MongoDB", "REST APIs", "Docker", "Kubernetes", "Slack", "Trello", "Netlify", "Python", "Bash", "XML", "Webpack", "Heroku", "OAuth", "GIMP", "Inkscape"];
 
 const Skills = () => {
   const classes = useStyles();
