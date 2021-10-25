@@ -34,6 +34,7 @@ const Projects = () => {
   const classes = useStyles();
 
   const projects = [
+    { title: "BigA Ecommerce", subheader: "October 2021 | 3 months", image: "https://ik.imagekit.io/7wpxe2myx/Mistyjack/biga_landing_Jo1mxyd1LS.png?updatedAt=1635155116468", description: "", link: "https://www.biga.africa", avatar: "https://ik.imagekit.io/7wpxe2myx/Mistyjack/biga_logo_mkb5t60hO1he.svg?updatedAt=1635155247383" },
     { title: "Safewash", subheader: "May 2021 | 1 month", image: "https://ik.imagekit.io/7wpxe2myx/Mistyjack/Safewash_v_0tltDYw.png", description: "", link: "https://bqglobalsolutions.com", avatar: "https://ik.imagekit.io/7wpxe2myx/Mistyjack/asafewash_Ftcdn2RYR.png" },
     { title: "Turbo Express Delivery", subheader: "February 2021 | 1 month", image: "https://ik.imagekit.io/7wpxe2myx/Mistyjack/turbo_F-aPLrLqW.png", description: "", link: "https://www.turboexpressdelivery.com", avatar: "https://ik.imagekit.io/7wpxe2myx/Mistyjack/aturbo_OZbppx3DUKn.png" },
     { title: "Cali Trade", subheader: "October 2020 | 4 months", image: "https://ik.imagekit.io/7wpxe2myx/Mistyjack/cali_dcacvR8fjwbl.png", description: "", link: "https://www.cali.trade", avatar: "https://ik.imagekit.io/7wpxe2myx/Mistyjack/acali_zy0MQKLGH.png" },
