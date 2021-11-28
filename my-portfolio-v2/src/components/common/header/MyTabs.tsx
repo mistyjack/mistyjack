@@ -2,14 +2,14 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/dist/client/router";
-import CustomLink from "./CustomLink";
+import CustomLink from "../CustomLink";
 
 import styles from "./Header.module.css";
 
 function a11yProps(index: number) {
   return {
     id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`
+    "aria-controls": `simple-tabpanel-${index}`,
   };
 }
 
@@ -45,10 +45,26 @@ const MyTabs: React.FC = () => {
   }, [router]);
 
   return (
-    <Tabs TabIndicatorProps={{ style: { display: "none" } }} value={value} onChange={handleChange} aria-label="basic tabs example">
-      {["Home", "About", "Services", "Portfolio", "Blog", "Contact"].map((title, index) => (
-        <Tab sx={{ color: "text.primary" }} className={styles.tabs} LinkComponent={CustomLink} href={`/#${title.toLowerCase()}`} key={`${title}-${index}`} label={title} {...a11yProps(index)} disableRipple />
-      ))}
+    <Tabs
+      TabIndicatorProps={{ style: { display: "none" } }}
+      value={value}
+      onChange={handleChange}
+      aria-label="basic tabs example"
+    >
+      {["Home", "About", "Services", "Portfolio", "Blog", "Contact"].map(
+        (title, index) => (
+          <Tab
+            sx={{ color: "text.primary" }}
+            className={styles.tabs}
+            LinkComponent={CustomLink}
+            href={`/#${title.toLowerCase()}`}
+            key={`${title}-${index}`}
+            label={title}
+            {...a11yProps(index)}
+            disableRipple
+          />
+        )
+      )}
     </Tabs>
   );
 };
