@@ -23,7 +23,7 @@ const Section1 = () => {
   }, [scroll_extent]);
 
   return (
-    <section id="#home">
+    <section id="home">
       <Box
         sx={{
           height: "100vh",

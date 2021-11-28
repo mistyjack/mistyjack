@@ -1,3 +1,11 @@
 .container {
   padding: 0 2rem;
 }
+
+.positioned_img {
+  border-radius: 5px;
+}
+
+.primary_text {
+  color: #083d77;
+}
