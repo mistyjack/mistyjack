@@ -1,5 +1,7 @@
 // Global file imports
 import "../styles/globals.css";
+import "swiper/css";
+import "swiper/css/pagination";
 
 // Next js imports
 import type { AppProps } from "next/app";

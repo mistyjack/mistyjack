@@ -10,6 +10,12 @@
   color: #083d77;
 }
 
-.section_background {
+.services_background {
   background-color: #083d77;
+}
+
+.testimonials_background {
+  background-color: #4767a6;
+  border-bottom-left-radius: 50% 20%;
+  border-bottom-right-radius: 50% 20%;
 }

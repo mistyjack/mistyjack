@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import { useScrollYPosition } from "react-use-scroll-position";
 import CustomLink from "../common/CustomLink";
 
-const Section1 = () => {
+const Hero = () => {
   const scroll_extent = useScrollYPosition();
   const [backgroundImage, setBackgroundImage] = useState(
     `url("/background.jpg") 50% 0% / cover`
@@ -38,8 +38,8 @@ const Section1 = () => {
           alignItems: "center",
         }}
       >
-        <Box sx={{ maxWidth: 470 }}>
-          <Container>
+        <Container maxWidth="lg">
+          <Box sx={{ maxWidth: 470, ml: "auto" }}>
             <Typography variant="h2" color="textSecondary" gutterBottom>
               Hi, my name is Mustafa Oladepo
             </Typography>
@@ -55,11 +55,11 @@ const Section1 = () => {
             >
               About Me
             </Button>
-          </Container>
-        </Box>
+          </Box>
+        </Container>
       </Box>
     </section>
   );
 };
 
-export default Section1;
+export default Hero;

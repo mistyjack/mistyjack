@@ -62,7 +62,7 @@ const serviceContent = [
 const Services = () => {
   return (
     <section
-      className={clsx(styles.section_background, "page-section")}
+      className={clsx(styles.services_background, "page-section")}
       id="services"
     >
       <Box sx={{ py: 10, color: "primary.contrastText" }}>

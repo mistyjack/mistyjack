@@ -1,9 +1,10 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Section1 from "../src/components/home/Section1";
+import Hero from "../src/components/home/hero";
 import About from "../src/components/home/About";
 import Services from "../src/components/home/Services";
 import Freelance from "../src/components/home/Freelance";
+import Testimonials from "../src/components/home/Testimonials";
 
 const Home: NextPage = () => {
   return (
@@ -28,10 +29,11 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <Section1 />
+        <Hero />
         <About />
         <Services />
         <Freelance />
+        <Testimonials />
       </main>
     </div>
   );

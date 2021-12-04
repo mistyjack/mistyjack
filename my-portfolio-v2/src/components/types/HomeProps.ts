@@ -3,3 +3,9 @@ export interface ServiceItemProps {
   title: string;
   content: string;
 }
+
+export interface TestimonialItemProps {
+  avatar: string;
+  content: string;
+  name: string;
+}
