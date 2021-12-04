@@ -9,3 +9,9 @@ export interface TestimonialItemProps {
   content: string;
   name: string;
 }
+
+export interface TabPanelProps {
+  children?: React.ReactNode;
+  index: number;
+  value: number;
+}

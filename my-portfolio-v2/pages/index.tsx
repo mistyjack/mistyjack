@@ -5,6 +5,7 @@ import About from "../src/components/home/About";
 import Services from "../src/components/home/Services";
 import Freelance from "../src/components/home/Freelance";
 import Testimonials from "../src/components/home/Testimonials";
+import Portfolio from "../src/components/home/Portfolio";
 
 const Home: NextPage = () => {
   return (
@@ -34,6 +35,7 @@ const Home: NextPage = () => {
         <Services />
         <Freelance />
         <Testimonials />
+        <Portfolio />
       </main>
     </div>
   );
