@@ -5,17 +5,17 @@ import { cloneElement } from "react";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 
 // My components imports
-import HeaderProps from "../../types/HeaderProps";
+import { HeaderProps } from "../../types/CommonProps";
 
 const ElevationScroll: React.FC<HeaderProps> = ({ children }) => {
   const trigger = useScrollTrigger({
     disableHysteresis: true,
-    threshold: 0
+    threshold: 0,
   });
 
   return cloneElement(children, {
     elevation: trigger ? 4 : 0,
-    color: trigger ? "secondary" : "transparent"
+    color: trigger ? "secondary" : "transparent",
   });
 };
 
