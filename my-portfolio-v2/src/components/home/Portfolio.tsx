@@ -102,7 +102,7 @@ const Portfolio = () => {
           </Box>
 
           {projects_categories.map((item, index) => (
-            <TabPanel value={value} index={index}>
+            <TabPanel key={`panel-${index}`} value={value} index={index}>
               <PortfolioItem />
             </TabPanel>
           ))}
