@@ -14,8 +14,13 @@ const ElevationScroll: React.FC<HeaderProps> = ({ children }) => {
   });
 
   return cloneElement(children, {
-    elevation: trigger ? 4 : 0,
-    color: trigger ? "secondary" : "transparent",
+    elevation: trigger ? 2 : 0,
+    color: trigger ? "" : "transparent",
+    style: {
+      backgroundImage: trigger
+        ? "radial-gradient( circle farthest-corner at 10% 20%, rgba(255,255,255,1) 0%, rgba(235,235,211,1) 90% )"
+        : "",
+    },
   });
 };
 

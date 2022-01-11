@@ -7,74 +7,54 @@ import ElevationScroll from "./ElevationScroll";
 import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
 import MyTabs from "./MyTabs";
-import { FacebookIcon, GithubIcon, LinkedInIcon, TwitterIcon } from "../Icons";
+import useMediaQuery from "@mui/material/useMediaQuery";
+
 import CustomLink from "../CustomLink";
+import MyDrawer from "./MyDrawer";
+import MyIcons from "../MyIcons";
 
 const Header: React.FC = () => {
-  return (
-    <ElevationScroll>
-      <AppBar>
-        <Container maxWidth="lg">
-          <Toolbar sx={{ justifyContent: "space-between" }}>
-            <Typography
-              sx={{
-                color: "text.secondary",
-                fontSize: 24,
-                fontWeight: 700,
-                lineHeight: "86px",
-                fontFamily: "Poppins",
-              }}
-            >
-              Mustafa Oladepo
-            </Typography>
+  const matches = useMediaQuery("(min-width: 900px)");
 
-            <MyTabs />
+  if (matches) {
+    return (
+      <ElevationScroll>
+        <AppBar
+          sx={{
+            "& .MuiPaper-elevation2": {
+              backgroundColor: "red !important",
+            },
+          }}
+        >
+          <Container maxWidth="lg">
+            <Toolbar sx={{ justifyContent: "space-between" }}>
+              <Typography
+                sx={{
+                  color: "text.secondary",
+                  fontSize: 20,
+                  fontWeight: 700,
+                  lineHeight: "86px",
+                  fontFamily: "Poppins",
+                }}
+              >
+                Mustafa Oladepo
+              </Typography>
 
-            <Box>
-              <Stack direction="row" spacing={2}>
-                <Avatar
-                  component={CustomLink}
-                  href="https://www.google.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{ bgcolor: "primary.main", height: 34, width: 34 }}
-                >
-                  <FacebookIcon fontSize="small" color="secondary" />
-                </Avatar>
-                <Avatar
-                  component={CustomLink}
-                  href="https://www.google.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{ bgcolor: "primary.main", height: 34, width: 34 }}
-                >
-                  <TwitterIcon fontSize="small" color="secondary" />
-                </Avatar>
-                <Avatar
-                  component={CustomLink}
-                  href="https://www.google.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{ bgcolor: "primary.main", height: 34, width: 34 }}
-                >
-                  <LinkedInIcon fontSize="small" color="secondary" />
-                </Avatar>
-                <Avatar
-                  component={CustomLink}
-                  href="https://www.google.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{ bgcolor: "primary.main", height: 34, width: 34 }}
-                >
-                  <GithubIcon fontSize="small" color="secondary" />
-                </Avatar>
-              </Stack>
-            </Box>
-          </Toolbar>
-        </Container>
-      </AppBar>
-    </ElevationScroll>
-  );
+              <MyTabs />
+
+              <Box>
+                <Stack direction="row" spacing={2}>
+                  <MyIcons />
+                </Stack>
+              </Box>
+            </Toolbar>
+          </Container>
+        </AppBar>
+      </ElevationScroll>
+    );
+  } else {
+    return <MyDrawer />;
+  }
 };
 
 export default Header;

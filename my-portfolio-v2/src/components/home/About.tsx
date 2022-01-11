@@ -44,10 +44,10 @@ const About = () => {
             >
               <Image
                 alt="Picture with grey background"
-                src="/misc1.jpg"
+                src="https://ik.imagekit.io/7wpxe2myx/Mistyjack/v2/misc1_IODZOFwis.jpg?updatedAt=1641944688544"
                 layout="responsive"
-                width={800}
-                height={533}
+                width={1080}
+                height={720}
                 className={styles.positioned_img}
               />
               <Box
@@ -60,7 +60,7 @@ const About = () => {
               >
                 <Image
                   alt="Picture with grey background"
-                  src="/misc2.jpg"
+                  src="https://ik.imagekit.io/7wpxe2myx/Mistyjack/v2/misc2_cfxfYMLjnR.jpg?updatedAt=1641944688636"
                   layout="responsive"
                   width={800}
                   height={533}

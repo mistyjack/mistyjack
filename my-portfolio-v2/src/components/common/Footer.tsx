@@ -5,7 +5,7 @@ import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
 
 import CustomLink from "./CustomLink";
-import { FacebookIcon, GithubIcon, LinkedInIcon, TwitterIcon } from "./Icons";
+import MyIcons from "./MyIcons";
 
 const Footer = () => {
   return (
@@ -36,42 +36,7 @@ const Footer = () => {
               direction="row"
               spacing={2}
             >
-              <Avatar
-                component={CustomLink}
-                href="https://www.google.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{ bgcolor: "primary.main", height: 34, width: 34 }}
-              >
-                <FacebookIcon fontSize="small" color="secondary" />
-              </Avatar>
-              <Avatar
-                component={CustomLink}
-                href="https://www.google.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{ bgcolor: "primary.main", height: 34, width: 34 }}
-              >
-                <TwitterIcon fontSize="small" color="secondary" />
-              </Avatar>
-              <Avatar
-                component={CustomLink}
-                href="https://www.google.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{ bgcolor: "primary.main", height: 34, width: 34 }}
-              >
-                <LinkedInIcon fontSize="small" color="secondary" />
-              </Avatar>
-              <Avatar
-                component={CustomLink}
-                href="https://www.google.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{ bgcolor: "primary.main", height: 34, width: 34 }}
-              >
-                <GithubIcon fontSize="small" color="secondary" />
-              </Avatar>
+              <MyIcons />
             </Stack>
           </Grid>
         </Grid>
