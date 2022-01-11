@@ -3,9 +3,11 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import { SyntheticEvent, useState } from "react";
+import { SyntheticEvent, useContext, useEffect, useRef, useState } from "react";
 import { TabPanelProps } from "../types/HomeProps";
 import PortfolioItem from "./PortfolioItem";
+import { ActionKind, ContextState } from "../types/CommonProps";
+import { MyContext } from "../../../pages/_app";
 
 function a11yProps(index: number) {
   return {
@@ -40,13 +42,24 @@ const projects_categories = [
 
 const Portfolio = () => {
   const [value, setValue] = useState(0);
+  const sectionArea = useRef<HTMLElement | null>(null);
+  const myState = useContext<ContextState | null>(MyContext);
+
+  useEffect(() => {
+    if (sectionArea.current && myState) {
+      myState.dispatch({
+        type: ActionKind.SetPortfolio,
+        payload: sectionArea.current.offsetTop,
+      });
+    }
+  }, [sectionArea, myState?.dispatch]);
 
   const handleChange = (event: SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 
   return (
-    <section id="portfolio" className="page-section">
+    <section ref={sectionArea} id="portfolio" className="page-section">
       <Container maxWidth="lg">
         <Box sx={{ textAlign: "center", mb: 5 }}>
           <Typography

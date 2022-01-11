@@ -6,10 +6,25 @@ import Grid from "@mui/material/Grid";
 import Image from "next/image";
 
 import styles from "./Home.module.css";
+import { useContext, useEffect, useRef } from "react";
+import { ActionKind, ContextState } from "../types/CommonProps";
+import { MyContext } from "../../../pages/_app";
 
 const About = () => {
+  const sectionArea = useRef<HTMLElement | null>(null);
+  const myState = useContext<ContextState | null>(MyContext);
+
+  useEffect(() => {
+    if (sectionArea.current && myState) {
+      myState.dispatch({
+        type: ActionKind.SetAbout,
+        payload: sectionArea.current.offsetTop,
+      });
+    }
+  }, [sectionArea, myState?.dispatch]);
+
   return (
-    <section id="about" className="page-section">
+    <section ref={sectionArea} id="about" className="page-section">
       <Container maxWidth="lg">
         <Grid justifyContent="space-between" alignItems="center" container>
           <Grid xs={12} md={6} item>

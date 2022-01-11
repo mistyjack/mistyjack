@@ -12,6 +12,9 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import clsx from "clsx";
 import styles from "./Home.module.css";
 import ServiceItem from "./ServiceItem";
+import { useContext, useEffect, useRef } from "react";
+import { ActionKind, ContextState } from "../types/CommonProps";
+import { MyContext } from "../../../pages/_app";
 
 const serviceContent = [
   {
@@ -60,8 +63,21 @@ const serviceContent = [
 ];
 
 const Services = () => {
+  const sectionArea = useRef<HTMLElement | null>(null);
+  const myState = useContext<ContextState | null>(MyContext);
+
+  useEffect(() => {
+    if (sectionArea.current && myState) {
+      myState.dispatch({
+        type: ActionKind.SetService,
+        payload: sectionArea.current.offsetTop,
+      });
+    }
+  }, [sectionArea, myState?.dispatch]);
+
   return (
     <section
+      ref={sectionArea}
       className={clsx(styles.services_background, "page-section")}
       id="services"
     >
