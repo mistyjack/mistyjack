@@ -20,45 +20,26 @@ const serviceContent = [
   {
     title: "Website Design",
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+      "I create visually appealing and professional websites that suit your brand needs.",
     icon: <LanguageIcon sx={{ color: "primary.light" }} fontSize="large" />,
   },
   {
-    title: "Front-end Web Development",
+    title: "Front-end Development",
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+      "I make efficient use of eminent tools and methodologies to create pixel-perfect user interfaces.",
     icon: <LaptopIcon sx={{ color: "primary.light" }} fontSize="large" />,
   },
   {
-    title: "Back-end Web Development",
+    title: "Back-end Development",
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+      "I write effective and well-optimized Application Programming Interfaces that power your applications.",
     icon: <ApiIcon sx={{ color: "primary.light" }} fontSize="large" />,
   },
   {
-    title: "Full-stack Web Development",
+    title: "Full-stack Development",
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+      "I deliver web applications in their entirety from the initiation stage up to completion.",
     icon: <DevicesIcon sx={{ color: "primary.light" }} fontSize="large" />,
-  },
-  {
-    title: "Saas",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-    icon: (
-      <IntegrationInstructionsOutlinedIcon
-        sx={{ color: "primary.light" }}
-        fontSize="large"
-      />
-    ),
-  },
-  {
-    title: "E-commerce",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
-    icon: (
-      <AddShoppingCartIcon sx={{ color: "primary.light" }} fontSize="large" />
-    ),
   },
 ];
 
@@ -87,15 +68,11 @@ const Services = () => {
             <Typography variant="h2" gutterBottom>
               Services
             </Typography>
-            <Typography variant="body1">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </Typography>
           </Box>
 
           <Grid spacing={3} container>
             {serviceContent.map((item, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
+              <Grid item xs={12} sm={6} key={index}>
                 <ServiceItem
                   icon={item.icon}
                   title={item.title}

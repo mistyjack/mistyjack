@@ -8,7 +8,7 @@ import { ServiceItemProps } from "../types/HomeProps";
 
 const ServiceItem: FC<ServiceItemProps> = ({ icon, title, content }) => {
   return (
-    <Box sx={{ maxWidth: 370 }}>
+    <Box sx={{ maxWidth: 500 }}>
       <Stack direction="row" spacing={2}>
         <Box>
           <Avatar
@@ -25,10 +25,23 @@ const ServiceItem: FC<ServiceItemProps> = ({ icon, title, content }) => {
           </Avatar>
         </Box>
         <Box>
-          <Typography variant="h3" gutterBottom>
+          <Typography
+            sx={{
+              fontSize: { xs: "1.6rem", sm: "1.875rem" },
+              fontWeight: 300,
+              lineHeight: "34.5px",
+            }}
+            variant="h3"
+            gutterBottom
+          >
             {title}
           </Typography>
-          <Typography variant="body1">{content}</Typography>
+          <Typography
+            sx={{ fontSize: { sm: "1.125rem" }, lineHeight: 1.65 }}
+            variant="body1"
+          >
+            {content}
+          </Typography>
         </Box>
       </Stack>
     </Box>
