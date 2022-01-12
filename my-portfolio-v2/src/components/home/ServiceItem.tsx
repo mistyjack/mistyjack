@@ -18,8 +18,7 @@ const ServiceItem: FC<ServiceItemProps> = ({ icon, title, content }) => {
               width: 56,
               height: 56,
             }}
-            alt="Remy Sharp"
-            src="/broken-image.jpg"
+            alt={title}
           >
             {icon}
           </Avatar>

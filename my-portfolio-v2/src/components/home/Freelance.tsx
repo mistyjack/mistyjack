@@ -24,9 +24,11 @@ const Freelance = () => {
         <Typography variant="h2" gutterBottom>
           I Am Available For Freelance
         </Typography>
-        <Button variant="contained" color="primary">
-          Hire Me Now
-        </Button>
+        <a href="mailto:oladepomustafa@yahoo.com">
+          <Button variant="contained" color="primary">
+            Get in Touch
+          </Button>
+        </a>
       </Container>
     </section>
   );

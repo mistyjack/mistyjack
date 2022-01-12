@@ -40,6 +40,26 @@ const itemData = [
     link: "https://www.biga.africa/scout/auth/signin",
   },
   {
+    img: "https://ik.imagekit.io/7wpxe2myx/Mistyjack/v2/projects/Mustafa_Oladepo_Profile_1__macbookpro15_front_4eG8_kqo4.png?updatedAt=1642022692367",
+    title: "My Portfolio",
+    link: "https://www.misty.ng",
+  },
+  {
+    img: "https://ik.imagekit.io/7wpxe2myx/Mistyjack/v2/projects/Mustafa_Oladepo_Profile_lg_tm2792_side_ZGJ1Suy-gUn.png?updatedAt=1642022698082",
+    title: "My Portfolio",
+    link: "https://www.misty.ng",
+  },
+  {
+    img: "https://ik.imagekit.io/7wpxe2myx/Mistyjack/v2/projects/Mustafa_Oladepo___Profile__2__microsoft-surfacebook-front_zYL8wgdjtK.png?updatedAt=1642022876932",
+    title: "My Portfolio",
+    link: "https://www.misty.ng",
+  },
+  {
+    img: "https://ik.imagekit.io/7wpxe2myx/Mistyjack/v2/projects/Mustafa_Oladepo_Profile_lg_tm2792_front_OhgqE0SYf.png?updatedAt=1642022698662",
+    title: "My Portfolio",
+    link: "https://www.misty.ng",
+  },
+  {
     img: "https://ik.imagekit.io/7wpxe2myx/Mistyjack/v2/projects/biga-promo_dell-xps13-front_RxphQ2Vel.png?updatedAt=1642017846680",
     title: "BigA",
     link: "https://www.biga.africa",
@@ -128,14 +148,14 @@ const itemData = [
 
 const PortfolioItem = () => {
   const matches = useMediaQuery("(min-width: 600px)");
-
+  // tr:w-248
   return (
     <ImageList variant="masonry" cols={matches ? 3 : 1} gap={8}>
       {itemData.map((item) => (
         <ImageListItem key={item.img}>
           <img
-            src={`${item.img}?w=248&fit=crop&auto=format`}
-            srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+            src={`${item.img}/tr:w-248`}
+            srcSet={`${item.img}?tr=w-248,dpr-2 2x,`}
             alt={item.title}
             loading="lazy"
           />

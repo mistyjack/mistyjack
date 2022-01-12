@@ -105,6 +105,7 @@ const About = () => {
                 layout="responsive"
                 width={1080}
                 height={720}
+                priority={true}
                 className={styles.positioned_img}
               />
               <Box
@@ -142,14 +143,21 @@ const About = () => {
               >
                 About <span className={styles.primary_text}>Me</span>
               </Typography>
-              <Typography sx={{ mb: 3 }} variant="body1">
+              <Typography variant="body1" gutterBottom>
                 I have always enjoyed problem-solving, and it is one of the
-                reasons why I picked up programming. I have been opportune to
-                work on several projects in their entirety from the initiation
-                stage up to the completion. These have built up my expertise in
-                the field of full-stack web development. Some of these projects
-                include e-commerce websites, admin/user dashboards, bitcoin
-                trading platforms, company websites and user portfolios.
+                reasons why I picked up programming.
+              </Typography>
+              <Typography variant="body1" gutterBottom>
+                I have been opportune to work on several projects in their
+                entirety from the initiation stage up to the completion. These
+                have built up my expertise in the field of full-stack web
+                development. Some of these projects include e-commerce websites,
+                admin/user dashboards, bitcoin trading platforms, company
+                websites and user portfolios.
+              </Typography>
+              <Typography sx={{ mb: 3 }} variant="body1">
+                Outside programming, I enjoy playing table tennis, arranging
+                Rubik's cube and streaming Chinese anime.
               </Typography>
               <Button
                 onClick={() => setChecked((prev) => !prev)}
