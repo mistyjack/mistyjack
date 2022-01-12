@@ -37,7 +37,6 @@ const projects_categories = [
   "FRONT-END",
   "BACKEND",
   "FULL-STACK",
-  "E-COMMERCE",
 ];
 
 const Portfolio = () => {
@@ -76,49 +75,10 @@ const Portfolio = () => {
           </Typography>
         </Box>
 
-        <Box>
-          <Box>
-            <Tabs
-              value={value}
-              onChange={handleChange}
-              variant="scrollable"
-              scrollButtons="auto"
-              aria-label="portfolio tabs"
-              sx={{
-                "& .MuiTabs-flexContainer": {
-                  justifyContent: { md: "center" },
-                },
-                "& .MuiTabs-indicator": {
-                  display: "none",
-                },
-                "& .Mui-selected": {
-                  bgcolor: "primary.main",
-                  color: "white !important",
-                  fontFamily: "Nunito",
-                },
-              }}
-            >
-              {projects_categories.map((item, index) => (
-                <Tab
-                  key={index}
-                  sx={{
-                    borderRadius: "15px",
-                    minHeight: 0,
-                    py: "5px",
-                    mx: 1,
-                  }}
-                  label={item}
-                  {...a11yProps(index)}
-                />
-              ))}
-            </Tabs>
-          </Box>
-
-          {projects_categories.map((item, index) => (
-            <TabPanel key={`panel-${index}`} value={value} index={index}>
-              <PortfolioItem />
-            </TabPanel>
-          ))}
+        <Box
+          sx={{ maxWidth: "820px", mx: "auto", height: 600, overflowY: "auto" }}
+        >
+          <PortfolioItem />
         </Box>
       </Container>
     </section>
