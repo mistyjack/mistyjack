@@ -31,7 +31,11 @@ const TestimonialItem: FC<TestimonialItemProps> = ({
   return (
     <blockquote>
       <QuoteIcon />
-      <Avatar sx={{ my: 5, mx: "auto" }} alt={name} src={avatar} />
+      <Avatar
+        sx={{ my: 5, mx: "auto", height: 120, width: 120 }}
+        alt={name}
+        src={avatar}
+      />
       <Typography
         sx={{ fontSize: "18px", fontWeight: 600, fontStyle: "italic" }}
         variant="body1"

@@ -34,7 +34,7 @@ const testimonials_content = [
       "https://ik.imagekit.io/7wpxe2myx/Mistyjack/v2/feer_5BGU_V61cD.png?updatedAt=1641978337310",
     content:
       "I'm always impressed with the services. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.",
-    name: "Sandra Misty",
+    name: "Firdaus Lawal",
   },
 ];
 
