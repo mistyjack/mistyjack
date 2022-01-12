@@ -16,14 +16,6 @@ import MyIcons from "../MyIcons";
 
 const drawerBleeding = 56;
 
-interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window?: () => Window;
-}
-
 const Root = styled("div")(({ theme }) => ({
   height: "100%",
   backgroundColor:
@@ -58,7 +50,6 @@ const MyDrawer: React.FC = () => {
       <Global
         styles={{
           ".MuiDrawer-root > .MuiPaper-root": {
-            height: `calc(50% - ${drawerBleeding}px)`,
             overflow: "visible",
           },
         }}
@@ -74,7 +65,7 @@ const MyDrawer: React.FC = () => {
           keepMounted: true,
         }}
       >
-        <StyledBox
+        <Box
           sx={{
             position: "absolute",
             bottom: -55,
@@ -96,11 +87,11 @@ const MyDrawer: React.FC = () => {
           >
             My Portfolio
           </Typography>
-        </StyledBox>
+        </Box>
         <StyledBox
           sx={{
             px: 2,
-            pb: 2,
+            pb: 3,
             height: "100%",
             overflow: "auto",
           }}
