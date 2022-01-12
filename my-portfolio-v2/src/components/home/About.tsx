@@ -171,7 +171,7 @@ const About = () => {
           </Grid>
         </Grid>
 
-        <Grow in={checked}>
+        <Grow in={checked} timeout={1500}>
           <div style={{ height: checked ? "auto" : 0 }}>
             <Box sx={{ mt: 10, display: checked ? "block" : "none" }}>
               <Grid
@@ -181,13 +181,7 @@ const About = () => {
                 container
               >
                 {topSkills.map((item, index) => (
-                  <Grid
-                    key={`${item.title}-${index}`}
-                    item
-                    xs={12}
-                    sm={6}
-                    md={4}
-                  >
+                  <Grid key={`${item.title}-${index}`} item xs={6} md={4}>
                     <Box>
                       <Typography sx={{ mb: 1 }} variant="h3">
                         {item.title}
