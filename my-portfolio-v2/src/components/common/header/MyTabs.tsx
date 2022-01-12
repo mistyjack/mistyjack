@@ -27,7 +27,7 @@ const MyTabs: React.FC = () => {
   };
 
   useEffect(() => {
-    if (myState) {
+    if (myState?.state) {
       if (scroll_extent < myState.state.about) {
         setValue(0);
       } else if (
@@ -44,7 +44,7 @@ const MyTabs: React.FC = () => {
         setValue(3);
       }
     }
-  }, [scroll_extent, myState]);
+  }, [scroll_extent, myState?.state]);
 
   useEffect(() => {
     switch (router) {

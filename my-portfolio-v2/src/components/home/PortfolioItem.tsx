@@ -148,7 +148,7 @@ const itemData = [
 
 const PortfolioItem = () => {
   const matches = useMediaQuery("(min-width: 600px)");
-  // tr:w-248
+
   return (
     <ImageList variant="masonry" cols={matches ? 3 : 1} gap={8}>
       {itemData.map((item) => (

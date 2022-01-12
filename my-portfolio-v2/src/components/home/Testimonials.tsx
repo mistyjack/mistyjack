@@ -6,13 +6,13 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Autoplay, EffectFade, Pagination } from "swiper";
+import SwiperCore, { Autoplay, Pagination } from "swiper";
 import TestimonialItem from "./TestimonialItem";
-import { useContext, useRef } from "react";
-import { ContextState } from "../types/CommonProps";
+import { useContext, useEffect, useRef } from "react";
+import { ContextState, ActionKind } from "../types/CommonProps";
 import { MyContext } from "../../../pages/_app";
 
-SwiperCore.use([Autoplay, Pagination, EffectFade]);
+SwiperCore.use([Autoplay, Pagination]);
 
 const testimonials_content = [
   {
@@ -64,12 +64,7 @@ const Testimonials = () => {
           </Box>
 
           <Box sx={{ maxWidth: 770, mx: "auto" }}>
-            <Swiper
-              autoplay
-              pagination={{ clickable: true }}
-              effect={"fade"}
-              loop={true}
-            >
+            <Swiper autoplay pagination={{ clickable: true }} loop={true}>
               {testimonials_content.map((item, index) => (
                 <SwiperSlide key={index}>
                   <TestimonialItem

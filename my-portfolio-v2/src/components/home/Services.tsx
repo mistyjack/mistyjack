@@ -1,13 +1,11 @@
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import IntegrationInstructionsOutlinedIcon from "@mui/icons-material/IntegrationInstructionsOutlined";
 import Grid from "@mui/material/Grid";
 import LanguageIcon from "@mui/icons-material/Language";
 import LaptopIcon from "@mui/icons-material/Laptop";
 import DevicesIcon from "@mui/icons-material/Devices";
 import ApiIcon from "@mui/icons-material/Api";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 import clsx from "clsx";
 import styles from "./Home.module.css";
@@ -54,7 +52,7 @@ const Services = () => {
         payload: sectionArea.current.offsetTop,
       });
     }
-  }, [sectionArea, myState]);
+  }, [sectionArea, myState?.dispatch]);
 
   return (
     <section

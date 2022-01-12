@@ -48,7 +48,7 @@ const Portfolio = () => {
         payload: sectionArea.current.offsetTop,
       });
     }
-  }, [sectionArea, myState]);
+  }, [sectionArea, myState?.dispatch]);
 
   return (
     <section ref={sectionArea} id="portfolio" className="page-section">

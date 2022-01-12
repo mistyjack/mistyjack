@@ -4,12 +4,10 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import ElevationScroll from "./ElevationScroll";
-import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
 import MyTabs from "./MyTabs";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-import CustomLink from "../CustomLink";
 import MyDrawer from "./MyDrawer";
 import MyIcons from "../MyIcons";
 

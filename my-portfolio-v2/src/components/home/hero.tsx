@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import Zoom from "@mui/material/Zoom";
 
 // Other imports
 import { useEffect, useState } from "react";
@@ -48,23 +49,25 @@ const Hero = () => {
         }}
       >
         <Container maxWidth="lg">
-          <Box sx={{ maxWidth: 470, ml: { md: "auto" } }}>
-            <Typography variant="h2" color="textSecondary" gutterBottom>
-              Hi, my name is Mustafa Oladepo
-            </Typography>
-            <Typography sx={{ mb: 3 }} variant="body2">
-              I am a full-stack web developer with over 6 years of experience in
-              this field.
-            </Typography>
-            <Button
-              component={CustomLink}
-              href="#about"
-              variant="contained"
-              color="primary"
-            >
-              About Me
-            </Button>
-          </Box>
+          <Zoom in={true} timeout={1500}>
+            <Box sx={{ maxWidth: 470, ml: { md: "auto" } }}>
+              <Typography variant="h2" color="textSecondary" gutterBottom>
+                Hi, my name is Mustafa Oladepo
+              </Typography>
+              <Typography sx={{ mb: 3 }} variant="body2">
+                I am a full-stack web developer with over 6 years of experience
+                in this field.
+              </Typography>
+              <Button
+                component={CustomLink}
+                href="#about"
+                variant="contained"
+                color="primary"
+              >
+                About Me
+              </Button>
+            </Box>
+          </Zoom>
         </Container>
       </Box>
     </section>
