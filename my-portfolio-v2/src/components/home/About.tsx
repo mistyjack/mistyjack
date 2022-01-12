@@ -78,7 +78,7 @@ const About = () => {
         payload: sectionArea.current.offsetTop,
       });
     }
-  }, [sectionArea, myState?.dispatch]);
+  }, [sectionArea, myState]);
 
   return (
     <section ref={sectionArea} id="about" className="page-section">
@@ -157,7 +157,7 @@ const About = () => {
               </Typography>
               <Typography sx={{ mb: 3 }} variant="body1">
                 Outside programming, I enjoy playing table tennis, arranging
-                Rubik's cube and streaming Chinese anime.
+                Rubik&apos;s cube and streaming Chinese anime.
               </Typography>
               <Button
                 onClick={() => setChecked((prev) => !prev)}

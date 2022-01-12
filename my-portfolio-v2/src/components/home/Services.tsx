@@ -54,7 +54,7 @@ const Services = () => {
         payload: sectionArea.current.offsetTop,
       });
     }
-  }, [sectionArea, myState?.dispatch]);
+  }, [sectionArea, myState]);
 
   return (
     <section

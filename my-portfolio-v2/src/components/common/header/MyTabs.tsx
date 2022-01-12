@@ -44,7 +44,7 @@ const MyTabs: React.FC = () => {
         setValue(3);
       }
     }
-  }, [scroll_extent, myState?.state]);
+  }, [scroll_extent, myState]);
 
   useEffect(() => {
     switch (router) {

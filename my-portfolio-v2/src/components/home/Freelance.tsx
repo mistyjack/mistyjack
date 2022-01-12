@@ -16,7 +16,7 @@ const Freelance = () => {
         payload: sectionArea.current.offsetTop,
       });
     }
-  }, [sectionArea, myState?.dispatch]);
+  }, [sectionArea, myState]);
 
   return (
     <section ref={sectionArea} id="freelance" className="page-section">

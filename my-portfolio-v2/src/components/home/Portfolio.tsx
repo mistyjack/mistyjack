@@ -1,9 +1,7 @@
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import { SyntheticEvent, useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { TabPanelProps } from "../types/HomeProps";
 import PortfolioItem from "./PortfolioItem";
 import { ActionKind, ContextState } from "../types/CommonProps";
@@ -40,7 +38,6 @@ const projects_categories = [
 ];
 
 const Portfolio = () => {
-  const [value, setValue] = useState(0);
   const sectionArea = useRef<HTMLElement | null>(null);
   const myState = useContext<ContextState | null>(MyContext);
 
@@ -51,11 +48,7 @@ const Portfolio = () => {
         payload: sectionArea.current.offsetTop,
       });
     }
-  }, [sectionArea, myState?.dispatch]);
-
-  const handleChange = (event: SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-  };
+  }, [sectionArea, myState]);
 
   return (
     <section ref={sectionArea} id="portfolio" className="page-section">
