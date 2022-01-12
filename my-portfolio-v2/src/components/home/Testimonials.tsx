@@ -16,19 +16,22 @@ SwiperCore.use([Autoplay, Pagination]);
 
 const testimonials_content = [
   {
-    avatar: "/person.jpg",
+    avatar:
+      "https://ik.imagekit.io/7wpxe2myx/Mistyjack/v2/agbaj_1__eN_qjo18r.jpeg?updatedAt=1641977821777",
     content:
-      "I'm always impressed with the services. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.",
-    name: "Sandra Misty",
+      "Working with Mustafa was quite an interesting one as he is really understanding and gets to deliver more than expected, He is an enthusiastic developer and I would work with him again.",
+    name: "CEO Agbaj Stores",
   },
   {
-    avatar: "/person.jpg",
+    avatar:
+      "https://ik.imagekit.io/7wpxe2myx/Mistyjack/v2/munir1_ITkucfm1xv.jpg?updatedAt=1641978336769",
     content:
-      "I'm always impressed with the services. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.",
-    name: "Sandra Misty",
+      "I've known Mustafa for a long time and in that time he has never not delivered. He's the most intelligent, efficient and industrious person I know and his inclusion in a project simplifies it by an enormous degree due to his professionalism. Mustafa is such a good team player that he always cover for his lacking colleagues and gets the work done anyway. He has great leadership skills and exhibits it without arrogance and with empathy.",
+    name: "Yusuf Munir",
   },
   {
-    avatar: "/person.jpg",
+    avatar:
+      "https://ik.imagekit.io/7wpxe2myx/Mistyjack/v2/feer_5BGU_V61cD.png?updatedAt=1641978337310",
     content:
       "I'm always impressed with the services. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.",
     name: "Sandra Misty",
@@ -57,10 +60,6 @@ const Testimonials = () => {
           <Box sx={{ mb: 10, maxWidth: 570, mx: "auto" }}>
             <Typography variant="h2" gutterBottom>
               Testimonials
-            </Typography>
-            <Typography variant="body1">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </Typography>
           </Box>
 

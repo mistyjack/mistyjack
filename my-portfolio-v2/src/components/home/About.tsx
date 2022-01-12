@@ -1,18 +1,75 @@
 import Typography from "@mui/material/Typography";
+import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import Image from "next/image";
+import Chip from "@mui/material/Chip";
+import LinearProgress, {
+  linearProgressClasses,
+} from "@mui/material/LinearProgress";
+import Grow from "@mui/material/Grow";
 
+import Image from "next/image";
 import styles from "./Home.module.css";
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { ActionKind, ContextState } from "../types/CommonProps";
 import { MyContext } from "../../../pages/_app";
+
+const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
+  height: 6,
+  borderRadius: 5,
+  [`&.${linearProgressClasses.colorPrimary}`]: {
+    backgroundColor:
+      theme.palette.grey[theme.palette.mode === "light" ? 200 : 800],
+  },
+  [`& .${linearProgressClasses.bar}`]: {
+    borderRadius: 5,
+    backgroundColor: theme.palette.mode === "light" ? "#083d77" : "#4767a6",
+  },
+}));
+
+const topSkills = [
+  { title: "JavaScript", strength: 93 },
+  { title: "TypeScript", strength: 80 },
+  { title: "React.js", strength: 96 },
+  { title: "Next.js", strength: 88 },
+  { title: "Nest.js", strength: 75 },
+  { title: "Node.js", strength: 82 },
+];
+
+const otherSkills = [
+  "Material-UI",
+  "Bootstrap",
+  "TailwindCSS",
+  "Express.js",
+  "Git",
+  "AWS",
+  "BitGo SDK",
+  "Redux",
+  "Jest",
+  "Testing-Library",
+  "MongoDB",
+  "REST APIs",
+  "Docker",
+  "Kubernetes",
+  "Slack",
+  "Trello",
+  "Netlify",
+  "Python",
+  "Bash",
+  "XML",
+  "Webpack",
+  "Heroku",
+  "OAuth",
+  "GIMP",
+  "Inkscape",
+];
 
 const About = () => {
   const sectionArea = useRef<HTMLElement | null>(null);
   const myState = useContext<ContextState | null>(MyContext);
+  const [checked, setChecked] = useState(false);
 
   useEffect(() => {
     if (sectionArea.current && myState) {
@@ -86,19 +143,67 @@ const About = () => {
                 About <span className={styles.primary_text}>Me</span>
               </Typography>
               <Typography sx={{ mb: 3 }} variant="body1">
-                At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                blanditiis praesentium voluptatum deleniti atque corrupti quos
-                dolores et quas molestias excepturi sint occaecati cupiditate
-                non provident, similique sunt in culpa qui officia deserunt
-                mollitia animi, id est laborum et dolorum fuga. Et harum quidem
-                rerum facilis est et expedita distinctio.
+                I have always enjoyed problem-solving, and it is one of the
+                reasons why I picked up programming. I have been opportune to
+                work on several projects in their entirety from the initiation
+                stage up to the completion. These have built up my expertise in
+                the field of full-stack web development. Some of these projects
+                include e-commerce websites, admin/user dashboards, bitcoin
+                trading platforms, company websites and user portfolios.
               </Typography>
-              <Button variant="outlined" color="primary" size="large">
+              <Button
+                onClick={() => setChecked((prev) => !prev)}
+                variant="outlined"
+                color="primary"
+                size="large"
+              >
                 Show My Skills
               </Button>
             </Box>
           </Grid>
         </Grid>
+
+        <Grow in={checked}>
+          <div style={{ height: checked ? "auto" : 0 }}>
+            <Box sx={{ mt: 10, display: checked ? "block" : "none" }}>
+              <Grid
+                justifyContent="space-between"
+                spacing={3}
+                alignItems="center"
+                container
+              >
+                {topSkills.map((item, index) => (
+                  <Grid
+                    key={`${item.title}-${index}`}
+                    item
+                    xs={12}
+                    sm={6}
+                    md={4}
+                  >
+                    <Box>
+                      <Typography sx={{ mb: 1 }} variant="h3">
+                        {item.title}
+                      </Typography>
+                      <BorderLinearProgress
+                        variant="determinate"
+                        value={item.strength}
+                      />
+                    </Box>
+                  </Grid>
+                ))}
+              </Grid>
+            </Box>
+            <Box sx={{ mt: 5 }}>
+              <Grid spacing={2} container>
+                {otherSkills.map((item, index) => (
+                  <Grid key={`${item}-${index}`} item>
+                    <Chip label={item} variant="outlined" color="primary" />
+                  </Grid>
+                ))}
+              </Grid>
+            </Box>
+          </div>
+        </Grow>
       </Container>
     </section>
   );

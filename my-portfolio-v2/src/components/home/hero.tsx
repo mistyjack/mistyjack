@@ -13,7 +13,7 @@ import CustomLink from "../common/CustomLink";
 const Hero = () => {
   const scroll_extent = useScrollYPosition();
   const [backgroundImage, setBackgroundImage] = useState(
-    `url("/background.png") 50% 0% / cover`
+    `url("https://ik.imagekit.io/7wpxe2myx/Mistyjack/v2/background_jk_WqyZUUU.png?updatedAt=1641944691899") 50% 0% / cover`
   );
   const matches = useMediaQuery("(min-width: 900px)");
 
@@ -53,8 +53,8 @@ const Hero = () => {
               Hi, my name is Mustafa Oladepo
             </Typography>
             <Typography sx={{ mb: 3 }} variant="body2">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Deleniti. Repellendus harum doloribus repellat, eos facilis rerum.
+              I am a full-stack web developer with over 6 years of experience in
+              this field.
             </Typography>
             <Button
               component={CustomLink}
