@@ -8,9 +8,6 @@ import Container from "@mui/material/Container";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, Pagination } from "swiper";
 import TestimonialItem from "./TestimonialItem";
-import { useContext, useEffect, useRef } from "react";
-import { ContextState, ActionKind } from "../types/CommonProps";
-import { MyContext } from "../../../pages/_app";
 
 SwiperCore.use([Autoplay, Pagination]);
 
@@ -39,12 +36,8 @@ const testimonials_content = [
 ];
 
 const Testimonials = () => {
-  const sectionArea = useRef<HTMLElement | null>(null);
-  const myState = useContext<ContextState | null>(MyContext);
-
   return (
     <section
-      ref={sectionArea}
       className={clsx(styles.testimonials_background, "page-section")}
       id="testimonials"
     >

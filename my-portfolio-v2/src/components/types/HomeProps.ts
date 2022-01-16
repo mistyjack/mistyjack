@@ -2,6 +2,8 @@ export interface ServiceItemProps {
   icon: JSX.Element;
   title: string;
   content: string;
+  index: number;
+  fadeIn: boolean;
 }
 
 export interface TestimonialItemProps {

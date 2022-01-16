@@ -6,13 +6,15 @@ import LanguageIcon from "@mui/icons-material/Language";
 import LaptopIcon from "@mui/icons-material/Laptop";
 import DevicesIcon from "@mui/icons-material/Devices";
 import ApiIcon from "@mui/icons-material/Api";
+import Fade from "@mui/material/Fade";
 
 import clsx from "clsx";
 import styles from "./Home.module.css";
 import ServiceItem from "./ServiceItem";
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { ActionKind, ContextState } from "../types/CommonProps";
 import { MyContext } from "../../../pages/_app";
+import { useScrollYPosition } from "react-use-scroll-position";
 
 const serviceContent = [
   {
@@ -44,6 +46,8 @@ const serviceContent = [
 const Services = () => {
   const sectionArea = useRef<HTMLElement | null>(null);
   const myState = useContext<ContextState | null>(MyContext);
+  const [fadeIn, setFadeIn] = useState(false);
+  const scroll_extent = useScrollYPosition();
 
   useEffect(() => {
     if (sectionArea.current && myState) {
@@ -54,6 +58,18 @@ const Services = () => {
     }
   }, [sectionArea, myState?.dispatch]);
 
+  useEffect(() => {
+    if (
+      !fadeIn &&
+      typeof window !== "undefined" &&
+      myState &&
+      myState.state.service &&
+      scroll_extent >= myState.state.service + 86 - window.innerHeight
+    ) {
+      setFadeIn(true);
+    }
+  }, [scroll_extent, myState?.state.service, fadeIn]);
+
   return (
     <section
       ref={sectionArea}
@@ -62,11 +78,13 @@ const Services = () => {
     >
       <Box sx={{ py: 10, color: "primary.contrastText" }}>
         <Container maxWidth="lg">
-          <Box sx={{ textAlign: "center", maxWidth: 570, mx: "auto", mb: 5 }}>
-            <Typography variant="h2" gutterBottom>
-              Services
-            </Typography>
-          </Box>
+          <Fade in={fadeIn} timeout={1000}>
+            <Box sx={{ textAlign: "center", maxWidth: 570, mx: "auto", mb: 5 }}>
+              <Typography variant="h2" gutterBottom>
+                Services
+              </Typography>
+            </Box>
+          </Fade>
 
           <Grid spacing={3} container>
             {serviceContent.map((item, index) => (
@@ -75,6 +93,8 @@ const Services = () => {
                   icon={item.icon}
                   title={item.title}
                   content={item.content}
+                  index={index}
+                  fadeIn={fadeIn}
                 />
               </Grid>
             ))}

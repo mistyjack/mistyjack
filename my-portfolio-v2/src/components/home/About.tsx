@@ -8,13 +8,14 @@ import Chip from "@mui/material/Chip";
 import LinearProgress, {
   linearProgressClasses,
 } from "@mui/material/LinearProgress";
-import Grow from "@mui/material/Grow";
+import Fade from "@mui/material/Fade";
 
 import Image from "next/image";
 import styles from "./Home.module.css";
 import { useContext, useEffect, useRef, useState } from "react";
 import { ActionKind, ContextState } from "../types/CommonProps";
 import { MyContext } from "../../../pages/_app";
+import { useScrollYPosition } from "react-use-scroll-position";
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
   height: 6,
@@ -69,7 +70,9 @@ const otherSkills = [
 const About = () => {
   const sectionArea = useRef<HTMLElement | null>(null);
   const myState = useContext<ContextState | null>(MyContext);
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(true);
+  const [fadeIn, setFadeIn] = useState(false);
+  const scroll_extent = useScrollYPosition();
 
   useEffect(() => {
     if (sectionArea.current && myState) {
@@ -80,52 +83,66 @@ const About = () => {
     }
   }, [sectionArea, myState?.dispatch]);
 
+  useEffect(() => {
+    if (
+      !fadeIn &&
+      typeof window !== "undefined" &&
+      myState &&
+      myState.state.about &&
+      scroll_extent >= myState.state.about + 86 - window.innerHeight
+    ) {
+      setFadeIn(true);
+    }
+  }, [scroll_extent, myState?.state.about, fadeIn]);
+
   return (
     <section ref={sectionArea} id="about" className="page-section">
       <Container maxWidth="lg">
         <Grid justifyContent="space-between" alignItems="center" container>
           <Grid xs={12} md={6} item>
-            <Box
-              sx={{
-                width: {
-                  md: "100%",
-                  xs: "100%",
-                },
-                maxWidth: 570,
-                position: "relative",
-                mx: {
-                  xs: "auto",
-                  md: 0,
-                },
-              }}
-            >
-              <Image
-                alt="Picture with grey background"
-                src="https://ik.imagekit.io/7wpxe2myx/Mistyjack/v2/misc1_IODZOFwis.jpg?updatedAt=1641944688544"
-                layout="responsive"
-                width={1080}
-                height={720}
-                priority={true}
-                className={styles.positioned_img}
-              />
+            <Fade in={fadeIn} timeout={2000}>
               <Box
                 sx={{
-                  width: "40%",
-                  position: "absolute",
-                  right: { md: "-10%", xs: -12 },
-                  bottom: { md: "-10%", xs: -9 },
+                  width: {
+                    md: "100%",
+                    xs: "100%",
+                  },
+                  maxWidth: 570,
+                  position: "relative",
+                  mx: {
+                    xs: "auto",
+                    md: 0,
+                  },
                 }}
               >
                 <Image
                   alt="Picture with grey background"
-                  src="https://ik.imagekit.io/7wpxe2myx/Mistyjack/v2/misc2_cfxfYMLjnR.jpg?updatedAt=1641944688636"
+                  src="https://ik.imagekit.io/7wpxe2myx/Mistyjack/v2/misc1_IODZOFwis.jpg?updatedAt=1641944688544"
                   layout="responsive"
-                  width={800}
-                  height={533}
+                  width={1080}
+                  height={720}
+                  priority={true}
                   className={styles.positioned_img}
                 />
+                <Box
+                  sx={{
+                    width: "40%",
+                    position: "absolute",
+                    right: { md: "-10%", xs: -12 },
+                    bottom: { md: "-10%", xs: -9 },
+                  }}
+                >
+                  <Image
+                    alt="Picture with grey background"
+                    src="https://ik.imagekit.io/7wpxe2myx/Mistyjack/v2/misc2_cfxfYMLjnR.jpg?updatedAt=1641944688636"
+                    layout="responsive"
+                    width={800}
+                    height={533}
+                    className={styles.positioned_img}
+                  />
+                </Box>
               </Box>
-            </Box>
+            </Fade>
           </Grid>
 
           <Grid xs={12} md={6} item>
@@ -136,76 +153,102 @@ const About = () => {
                 },
               }}
             >
-              <Typography
-                sx={{ mb: 2, mt: { xs: 4, md: 0 } }}
-                variant="h2"
-                color="textSecondary"
+              <Fade in={fadeIn} timeout={1000}>
+                <Typography
+                  sx={{ mb: 2, mt: { xs: 4, md: 0 } }}
+                  variant="h2"
+                  color="textSecondary"
+                >
+                  About <span className={styles.primary_text}>Me</span>
+                </Typography>
+              </Fade>
+              <Fade
+                in={fadeIn}
+                style={{ transitionDelay: "500ms" }}
+                timeout={1000}
               >
-                About <span className={styles.primary_text}>Me</span>
-              </Typography>
-              <Typography variant="body1" gutterBottom>
-                I have always enjoyed problem-solving, and it is one of the
-                reasons why I picked up programming.
-              </Typography>
-              <Typography variant="body1" gutterBottom>
-                I have been opportune to work on several projects in their
-                entirety from the initiation stage up to the completion. These
-                have built up my expertise in the field of full-stack web
-                development. Some of these projects include e-commerce websites,
-                admin/user dashboards, bitcoin trading platforms, company
-                websites and user portfolios.
-              </Typography>
-              <Typography sx={{ mb: 3 }} variant="body1">
-                Outside programming, I enjoy playing table tennis, arranging
-                Rubik&apos;s cube and streaming Chinese anime.
-              </Typography>
-              <Button
-                onClick={() => setChecked((prev) => !prev)}
-                variant="outlined"
-                color="primary"
-                size="large"
+                <Typography variant="body1" gutterBottom>
+                  I have always enjoyed problem-solving, and it is one of the
+                  reasons why I picked up programming.
+                </Typography>
+              </Fade>
+              <Fade
+                in={fadeIn}
+                style={{ transitionDelay: "750ms" }}
+                timeout={1000}
               >
-                Show My Skills
-              </Button>
+                <Typography variant="body1" gutterBottom>
+                  I have been opportune to work on several projects in their
+                  entirety from the initiation stage up to the completion. These
+                  have built up my expertise in the field of full-stack web
+                  development. Some of these projects include e-commerce
+                  websites, admin/user dashboards, bitcoin trading platforms,
+                  company websites and user portfolios.
+                </Typography>
+              </Fade>
+              <Fade
+                in={fadeIn}
+                style={{ transitionDelay: "1000ms" }}
+                timeout={1000}
+              >
+                <Typography sx={{ mb: 3 }} variant="body1">
+                  Outside programming, I enjoy playing table tennis, arranging
+                  Rubik&apos;s cube and streaming Chinese anime.
+                </Typography>
+              </Fade>
+              <Fade
+                in={fadeIn}
+                style={{ transitionDelay: "1250ms" }}
+                timeout={1000}
+              >
+                <Button
+                  onClick={() => setChecked((prev) => !prev)}
+                  variant="outlined"
+                  color="primary"
+                  size="large"
+                >
+                  {checked ? "Hide Skills" : "Show My Skills"}
+                </Button>
+              </Fade>
             </Box>
           </Grid>
         </Grid>
 
-        <Grow in={checked} timeout={1500}>
-          <div style={{ height: checked ? "auto" : 0 }}>
-            <Box sx={{ mt: 10, display: checked ? "block" : "none" }}>
-              <Grid
-                justifyContent="space-between"
-                spacing={3}
-                alignItems="center"
-                container
-              >
-                {topSkills.map((item, index) => (
-                  <Grid key={`${item.title}-${index}`} item xs={6} md={4}>
-                    <Box>
-                      <Typography sx={{ mb: 1 }} variant="h3">
-                        {item.title}
-                      </Typography>
-                      <BorderLinearProgress
-                        variant="determinate"
-                        value={item.strength}
-                      />
-                    </Box>
-                  </Grid>
-                ))}
-              </Grid>
-            </Box>
-            <Box sx={{ mt: 5 }}>
-              <Grid spacing={2} container>
-                {otherSkills.map((item, index) => (
-                  <Grid key={`${item}-${index}`} item>
-                    <Chip label={item} variant="outlined" color="primary" />
-                  </Grid>
-                ))}
-              </Grid>
-            </Box>
-          </div>
-        </Grow>
+        <Fade in={fadeIn} timeout={1000} style={{ transitionDelay: "1500ms" }}>
+          <Box sx={{ mt: 10, display: checked ? "block" : "none" }}>
+            <Grid
+              justifyContent="space-between"
+              spacing={3}
+              alignItems="center"
+              container
+            >
+              {topSkills.map((item, index) => (
+                <Grid key={`${item.title}-${index}`} item xs={6} md={4}>
+                  <Box>
+                    <Typography sx={{ mb: 1 }} variant="h3">
+                      {item.title}
+                    </Typography>
+                    <BorderLinearProgress
+                      variant="determinate"
+                      value={item.strength}
+                    />
+                  </Box>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
+        </Fade>
+        <Fade in={fadeIn} timeout={1000} style={{ transitionDelay: "2000ms" }}>
+          <Box sx={{ mt: 5 }}>
+            <Grid spacing={2} container>
+              {otherSkills.map((item, index) => (
+                <Grid key={`${item}-${index}`} item>
+                  <Chip label={item} variant="outlined" color="primary" />
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
+        </Fade>
       </Container>
     </section>
   );

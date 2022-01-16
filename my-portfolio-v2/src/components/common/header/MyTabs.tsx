@@ -27,17 +27,18 @@ const MyTabs: React.FC = () => {
   };
 
   useEffect(() => {
+    const nav = 86;
     if (myState?.state) {
-      if (scroll_extent < myState.state.about) {
+      if (scroll_extent < myState.state.about - nav) {
         setValue(0);
       } else if (
-        scroll_extent >= myState.state.about &&
-        scroll_extent < myState.state.service
+        scroll_extent >= myState.state.about - nav &&
+        scroll_extent < myState.state.service - nav
       ) {
         setValue(1);
       } else if (
-        scroll_extent >= myState.state.service &&
-        scroll_extent < myState.state.portfolio
+        scroll_extent >= myState.state.service - nav &&
+        scroll_extent < myState.state.portfolio - nav
       ) {
         setValue(2);
       } else {

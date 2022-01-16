@@ -1,11 +1,14 @@
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import { useContext, useEffect, useRef } from "react";
+import Fade from "@mui/material/Fade";
+
+import { useContext, useEffect, useRef, useState } from "react";
 import { TabPanelProps } from "../types/HomeProps";
 import PortfolioItem from "./PortfolioItem";
 import { ActionKind, ContextState } from "../types/CommonProps";
 import { MyContext } from "../../../pages/_app";
+import { useScrollYPosition } from "react-use-scroll-position";
 
 function a11yProps(index: number) {
   return {
@@ -40,6 +43,8 @@ const projects_categories = [
 const Portfolio = () => {
   const sectionArea = useRef<HTMLElement | null>(null);
   const myState = useContext<ContextState | null>(MyContext);
+  const [fadeIn, setFadeIn] = useState(false);
+  const scroll_extent = useScrollYPosition();
 
   useEffect(() => {
     if (sectionArea.current && myState) {
@@ -50,29 +55,52 @@ const Portfolio = () => {
     }
   }, [sectionArea, myState?.dispatch]);
 
+  useEffect(() => {
+    if (
+      !fadeIn &&
+      typeof window !== "undefined" &&
+      myState &&
+      myState.state.portfolio &&
+      scroll_extent >= myState.state.portfolio + 86 - window.innerHeight
+    ) {
+      setFadeIn(true);
+    }
+  }, [scroll_extent, myState?.state.portfolio, fadeIn]);
+
   return (
     <section ref={sectionArea} id="portfolio" className="page-section">
       <Container maxWidth="lg">
         <Box sx={{ textAlign: "center", mb: 5 }}>
-          <Typography
-            sx={{ fontSize: 15 }}
-            color="primary"
-            variant="h3"
-            component="h2"
-            gutterBottom
-          >
-            Portfolio
-          </Typography>
-          <Typography variant="h2" component="h3">
-            I Love What I Do
-          </Typography>
+          <Fade in={fadeIn} timeout={1000}>
+            <Typography
+              sx={{ fontSize: 15 }}
+              color="primary"
+              variant="h3"
+              component="h2"
+              gutterBottom
+            >
+              Portfolio
+            </Typography>
+          </Fade>
+          <Fade in={fadeIn} timeout={1500}>
+            <Typography variant="h2" component="h3">
+              I Love What I Do
+            </Typography>
+          </Fade>
         </Box>
 
-        <Box
-          sx={{ maxWidth: "820px", mx: "auto", height: 600, overflowY: "auto" }}
-        >
-          <PortfolioItem />
-        </Box>
+        <Fade in={fadeIn} timeout={2000}>
+          <Box
+            sx={{
+              maxWidth: "820px",
+              mx: "auto",
+              height: 600,
+              overflowY: "auto",
+            }}
+          >
+            <PortfolioItem />
+          </Box>
+        </Fade>
       </Container>
     </section>
   );
