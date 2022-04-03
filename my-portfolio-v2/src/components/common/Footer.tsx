@@ -25,7 +25,7 @@ const Footer = () => {
               }}
               variant="body1"
             >
-              &copy; Copyright 2021 - Mustafa
+              &copy; Copyright 2021 - <a href="https://d-80673c5271.awsapps.com/start#/">Mustafa</a>
             </Typography>
           </Grid>
           <Grid xs={12} sm={6} item>
