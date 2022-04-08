@@ -64,6 +64,7 @@ const reducer = (state: PositionState, action: Action) => {
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [state, dispatch] = useReducer(reducer, initialState);
+  console.log(typeof window !== "undefined" ? window.location.hostname : null)
 
   return (
     <ThemeProvider theme={theme}>
