@@ -5,6 +5,7 @@ import "swiper/css/pagination";
 
 // Next js imports
 import type { AppProps } from "next/app";
+import { useRouter } from "next/router";
 
 // Mui imports
 import CssBaseline from "@mui/material/CssBaseline";
@@ -64,6 +65,8 @@ const reducer = (state: PositionState, action: Action) => {
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const router = useRouter();
+  console.log(router);
 
   return (
     <ThemeProvider theme={theme}>
