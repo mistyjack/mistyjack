@@ -55,7 +55,7 @@ const Hero = () => {
                 Hi, my name is Mustafa Oladepo
               </Typography>
               <Typography sx={{ mb: 3 }} variant="body2">
-                I am a full-stack developer with a demonstrated history of designing, developing, and maintaining small and enterprise-level applications using various development technologies and methodologies. Skilled in JavaScript, TypeScript, Node.js, React.js, Next.js, Nest.js.
+                I am a full-stack developer with a demonstrated history of designing, developing, and maintaining small and enterprise-level applications using various development technologies and methodologies.
               </Typography>
               <Button
                 component={CustomLink}
