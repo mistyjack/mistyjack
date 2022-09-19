@@ -1,5 +1,5 @@
 - 👋 Hi, I’m Mustafa
-- 👀 I’m interested in fullstack web development with JavaScript/TypeScript
+- 👀 I’m interested in fullstack development with JavaScript/TypeScript
 - 🌱 I’m currently learning AWS
 - 💞️ I’m looking to collaborate on JavaScript projects
 - 📫 How to reach me, email me at moladepo@outlook.com
