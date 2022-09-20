@@ -1,11 +1,10 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Hero from "../src/components/home/hero";
 import About from "../src/components/home/About";
-import Services from "../src/components/home/Services";
-import Freelance from "../src/components/home/Freelance";
-import Testimonials from "../src/components/home/Testimonials";
+import Experience from "../src/components/home/Experience";
+import Hero from "../src/components/home/hero";
 import Portfolio from "../src/components/home/Portfolio";
+import Testimonials from "../src/components/home/Testimonials";
 
 const Home: NextPage = () => {
   return (
@@ -32,8 +31,8 @@ const Home: NextPage = () => {
       <main>
         <Hero />
         <About />
-        <Services />
-        <Freelance />
+        <Experience />
+        {/* <Freelance /> */}
         <Testimonials />
         <Portfolio />
       </main>

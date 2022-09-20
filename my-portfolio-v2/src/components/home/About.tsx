@@ -1,21 +1,21 @@
-import Typography from "@mui/material/Typography";
-import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
 import Chip from "@mui/material/Chip";
-import LinearProgress, {
-  linearProgressClasses,
-} from "@mui/material/LinearProgress";
+import Container from "@mui/material/Container";
 import Fade from "@mui/material/Fade";
+import Grid from "@mui/material/Grid";
+import LinearProgress, {
+  linearProgressClasses
+} from "@mui/material/LinearProgress";
+import { styled } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
 
 import Image from "next/image";
-import styles from "./Home.module.css";
 import { useContext, useEffect, useRef, useState } from "react";
-import { ActionKind, ContextState } from "../types/CommonProps";
-import { MyContext } from "../../../pages/_app";
 import { useScrollYPosition } from "react-use-scroll-position";
+import { MyContext } from "../../../pages/_app";
+import { ActionKind, ContextState } from "../types/CommonProps";
+import styles from "./Home.module.css";
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
   height: 6,

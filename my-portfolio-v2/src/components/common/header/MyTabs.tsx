@@ -1,13 +1,13 @@
-import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import { useContext, useEffect, useState } from "react";
+import Tabs from "@mui/material/Tabs";
 import { useRouter } from "next/dist/client/router";
+import { useContext, useEffect, useState } from "react";
 import CustomLink from "../CustomLink";
 
-import styles from "./Header.module.css";
 import { useScrollYPosition } from "react-use-scroll-position";
 import { MyContext } from "../../../../pages/_app";
 import { ContextState } from "../../types/CommonProps";
+import styles from "./Header.module.css";
 
 function a11yProps(index: number) {
   return {
@@ -55,7 +55,7 @@ const MyTabs: React.FC = () => {
       case "/#about":
         setValue(1);
         break;
-      case "/#services":
+      case "/#experience":
         setValue(2);
         break;
       case "/#portfolio":
@@ -71,7 +71,7 @@ const MyTabs: React.FC = () => {
       onChange={handleChange}
       aria-label="basic tabs example"
     >
-      {["Home", "About", "Services", "Portfolio"].map((title, index) => (
+      {["Home", "About", "Experience", "Portfolio"].map((title, index) => (
         <Tab
           sx={{ color: "text.primary" }}
           className={styles.tabs}

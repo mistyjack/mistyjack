@@ -1,8 +1,9 @@
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
+import Fade from "@mui/material/Fade";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import Avatar from "@mui/material/Avatar";
-import Fade from "@mui/material/Fade";
 
 import { FC } from "react";
 import { ServiceItemProps } from "../types/HomeProps";
@@ -13,6 +14,9 @@ const ServiceItem: FC<ServiceItemProps> = ({
   content,
   index,
   fadeIn,
+  subTitle,
+  period,
+  link
 }) => {
   return (
     <Box sx={{ maxWidth: 500 }}>
@@ -54,7 +58,19 @@ const ServiceItem: FC<ServiceItemProps> = ({
               variant="h3"
               gutterBottom
             >
-              {title}
+              {title} &nbsp;&nbsp; {Boolean(link) && <a href={link} target="_blank" rel="noopener noreferrer"><OpenInNewIcon /></a>}
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: "0.85rem",
+                fontFamily: "Poppins",
+                fontWeight: 700,
+                lineHeight: "24px",
+              }}
+              variant="h4"
+              gutterBottom
+            >
+              {subTitle}, {period}
             </Typography>
             <Typography
               sx={{ fontSize: { sm: "1.125rem" }, lineHeight: 1.65 }}

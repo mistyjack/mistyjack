@@ -1,14 +1,14 @@
 import { Global } from "@emotion/react";
-import { styled } from "@mui/material/styles";
+import Box from "@mui/material/Box";
 import { grey } from "@mui/material/colors";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import Stack from "@mui/material/Stack";
+import { styled } from "@mui/material/styles";
+import SwipeableDrawer from "@mui/material/SwipeableDrawer";
+import Typography from "@mui/material/Typography";
 
 import { useState } from "react";
 import CustomLink from "../CustomLink";
@@ -97,7 +97,7 @@ const MyDrawer: React.FC = () => {
           }}
         >
           <List sx={{ mt: 6, mb: 3 }}>
-            {["Home", "About", "Services", "Portfolio"].map((item, index) => (
+            {["Home", "About", "Experience", "Portfolio"].map((item, index) => (
               <ListItem key={`${item}-${index}`} disablePadding>
                 <ListItemButton
                   component={CustomLink}

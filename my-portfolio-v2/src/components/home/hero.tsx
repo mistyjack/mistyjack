@@ -1,8 +1,8 @@
 // Mui imports
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Zoom from "@mui/material/Zoom";
 
@@ -55,7 +55,7 @@ const Hero = () => {
                 Hi, my name is Mustafa Oladepo
               </Typography>
               <Typography sx={{ mb: 3 }} variant="body2">
-                I am a full-stack developer with a demonstrated history of designing, developing, and maintaining small and enterprise-level applications using various development technologies and methodologies.
+                I am a full-stack developer with a demonstrated history of designing, developing, and maintaining small and enterprise-level applications.
               </Typography>
               <Button
                 component={CustomLink}

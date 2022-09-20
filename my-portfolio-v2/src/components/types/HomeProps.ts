@@ -4,12 +4,17 @@ export interface ServiceItemProps {
   content: string;
   index: number;
   fadeIn: boolean;
+  link?: string;
+  subTitle: string;
+  period: string;
 }
 
 export interface TestimonialItemProps {
   avatar: string;
   content: string;
   name: string;
+  position?: string;
+  link?: string;
 }
 
 export interface TabPanelProps {

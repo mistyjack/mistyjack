@@ -1,3 +1,4 @@
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { createSvgIcon, Typography } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 
@@ -27,6 +28,8 @@ const TestimonialItem: FC<TestimonialItemProps> = ({
   avatar,
   content,
   name,
+  position,
+  link
 }) => {
   return (
     <blockquote>
@@ -42,9 +45,12 @@ const TestimonialItem: FC<TestimonialItemProps> = ({
       >
         {content}
       </Typography>
-      <Typography variant="body1" sx={{ fontSize: "14px", mt: 4, mb: 7 }}>
-        {name}
+      <Typography variant="body1" sx={{ fontSize: "14px", mt: 4 }}>
+        {name} {Boolean(link) && <>&nbsp;&nbsp;<a href={link} target="_blank" rel="noopener noreferrer"><LinkedInIcon fontSize='small' /></a></>}
       </Typography>
+      {Boolean(position) && <Typography variant="body1" sx={{ fontSize: "14px", mb: 7 }}>
+        {position}
+      </Typography>}
     </blockquote>
   );
 };

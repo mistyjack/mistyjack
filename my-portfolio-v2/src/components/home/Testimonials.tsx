@@ -1,17 +1,34 @@
 import styles from "./Home.module.css";
-import clsx from "clsx";
 
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 
-import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 import TestimonialItem from "./TestimonialItem";
 
 SwiperCore.use([Autoplay, Pagination]);
 
 const testimonials_content = [
+  {
+    avatar:
+      "https://ik.imagekit.io/7wpxe2myx/Mistyjack/MrObi_PqZhyuExR.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1663712817140",
+    content:
+      "Mustafa Oladepo is a positive-minded, energetic, and reliable asset to have in a team. His skills span from front-end to full stack including; implementing front-end designs using the most recent and compatible tech stack, APIs implementation and development, and AWS infrastructure management. His growth, quick learning, and eagerness to take up tasks while collaborating with team members and external stakeholders to deliver tasks efficiently and timely make him outstanding. He has shown to be up-to-date on emerging technologies. I am sure Mustafa will be a great asset to any team. Happy to recommend him.",
+    name: "Obinna Madugba",
+    position: "Manager, Business Process Technologies",
+    link: "https://www.linkedin.com/in/obinnamadugba"
+  },
+  {
+    avatar:
+      "https://ik.imagekit.io/7wpxe2myx/Mistyjack/Abdullah_p7hep4cJ4j.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1663712817006",
+    content:
+      "Mustafa is an highly skilled Software Engineer with experience in different programming languages and tools. With reserved personality and strong work ethics while working together as teammates, he has repeatedly proved reliable, knowledgeable, solution-driven, a valuable contributor and most importantly, time conscious.",
+    name: "Abdullah Oladipo",
+    position: "Former Co-worker, Business Process Technologies",
+    link: "https://www.linkedin.com/in/abdulloooh"
+  },
   {
     avatar:
       "https://ik.imagekit.io/7wpxe2myx/Mistyjack/v2/agbaj_1__eN_qjo18r.jpeg?updatedAt=1641977821777",
@@ -38,7 +55,7 @@ const testimonials_content = [
 const Testimonials = () => {
   return (
     <section
-      className={clsx(styles.testimonials_background, "page-section")}
+      className={styles.testimonials_background}
       id="testimonials"
     >
       <Container>
@@ -64,6 +81,8 @@ const Testimonials = () => {
                     avatar={item.avatar}
                     content={item.content}
                     name={item.name}
+                    position={item.position ? item.position : undefined}
+                    link={item.link ? item.link : undefined}
                   />
                 </SwiperSlide>
               ))}
