@@ -1,8 +1,10 @@
 - 👋 Hi, I’m Mustafa
 - 👀 I’m interested in fullstack development with JavaScript/TypeScript
-- 🌱 I’m currently learning AWS
-- 💞️ I’m looking to collaborate on JavaScript projects
-- 📫 How to reach me, email me at moladepo@outlook.com
+- 🌱 I’m currently learning AWS Serverless Microservices
+- 💞️ I’m looking to collaborate on JavaScript/TypeScript projects
+- 📫 How to reach me, email me at moladepo@outlook.com or view my portfolio at https://www.misty.ng
+
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=mistyjack)](https://github.com/anuraghazra/github-readme-stats)
 
 <!---
 mistyjack/mistyjack is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
