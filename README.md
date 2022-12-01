@@ -11,7 +11,7 @@ You can click the Preview link to take a look at your changes.
 
 # Hello there; welcome 👋🏾
 
-[![Website Badge](https://img.shields.io/badge/-Portfolio-3B7EBF?style=for-the-badge&logo=Google-Chrome&logoColor=white&link=https://www.misty.ng)](https://www.misty.ng) [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-3B7EBF?style=for-the-badge&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/mustafa-oladepo-51660772)](https://www.linkedin.com/in/mustafa-oladepo-51660772) [![Twitter Badge](https://img.shields.io/badge/-@iamsuulola-3B7EBF?style=for-the-badge&logo=twitter&logoColor=white&link=https://twitter.com/_mistyjack)](https://twitter.com/_mistyjack)
+[![Website Badge](https://img.shields.io/badge/-Portfolio-3B7EBF?style=for-the-badge&logo=Google-Chrome&logoColor=white&link=https://www.misty.ng)](https://www.misty.ng) [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-3B7EBF?style=for-the-badge&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/mustafa-oladepo-51660772)](https://www.linkedin.com/in/mustafa-oladepo-51660772) [![Twitter Badge](https://img.shields.io/badge/-@_mistyjack-3B7EBF?style=for-the-badge&logo=twitter&logoColor=white&link=https://twitter.com/_mistyjack)](https://twitter.com/_mistyjack)
 
 I work as a software engineer and am skilled in Javascript, Typescript, React.js/Next.js, AWS and Nest.Js. I have a strong passion for knowledge sharing, documentation, and web engineering. Learning cloud engineering at the moment.
 
