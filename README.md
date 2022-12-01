@@ -20,7 +20,7 @@ I work as a software engineer and am skilled in Javascript, Typescript, React.js
 
 ---
 
-| <img align="center" src="https://github-readme-stats.vercel.app/api?username=mistyjack&show_icons=true&include_all_commits=true&hide_border=true" alt="Mustafa's GitHub stats" /> | <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mistyjack&langs_count=8&layout=compact&hide=php&hide_border=true" alt="Mustafa's GitHub stats" /> |
+| [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=mistyjack)](https://github.com/mistyjack/github-readme-stats) | <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mistyjack&langs_count=8&layout=compact&hide=php&hide_border=true" alt="Mustafa's GitHub stats" /> |
 | ------------- | ------------- |
 
 <img src="https://gpvc.arturio.dev/mistyjack" alt="profile views">
